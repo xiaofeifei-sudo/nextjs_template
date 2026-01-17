@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "build:static": "./scripts/build-static.sh",
+    "serve:static": "./scripts/serve-static.sh"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",

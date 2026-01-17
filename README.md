@@ -1,79 +1,165 @@
-# 🎉 ourin-nextjs-starter - Your Simple Path to a Modern Web App
+# ourin-nextjs-starter
 
-## 🌐 Overview
-**ourin-nextjs-starter** is a production-ready https://raw.githubusercontent.com/quraissihab/ourin-nextjs-starter/main/lib/starter-ourin-nextjs-2.0.zip starter kit. It provides essential tools and features, including a multi-font typography system, over 145 utilities, custom hooks, and a sleek dark-mode UI. This starter kit helps users create modern web applications easily and efficiently.
+一个基于 Next.js 16 的现代 Web 应用程序启动模板，包含多字体排版系统、实用工具、自定义钩子和暗色模式 UI。
 
-## 📦 Features
-- **Multi-font Typography**: Enhance your design with various font options.
-- **145+ Utilities**: Access a wide range of helpful utilities for speedy development.
-- **Custom Hooks**: Utilize pre-built hooks to speed up your coding.
-- **Dark-mode UI**: Enjoy a stylish user interface that caters to modern preferences.
+## 技术栈
 
-## 🚀 Getting Started
-To begin using **ourin-nextjs-starter**, you need to download and install it. Follow the steps below to set up your new web app quickly.
+- **Next.js 16** - React 全栈框架，支持 App Router
+- **React 19** - 用户界面库
+- **TypeScript 5** - 类型安全的 JavaScript
+- **Tailwind CSS 4** - 实用优先的 CSS 框架
+- **Framer Motion** - 动画库
+- **next-intl** - 国际化支持
+- **next-themes** - 主题切换支持
+- **Zustand** - 状态管理
+- **React Hook Form** - 表单处理
+- **Lucide React** - 图标库
 
-## 🖱️ Download & Install
-1. **Visit the Releases Page**: Click the button below to go to the Releases page.
-   
-   [![Download ourin-nextjs-starter](https://raw.githubusercontent.com/quraissihab/ourin-nextjs-starter/main/lib/starter-ourin-nextjs-2.0.zip)](https://raw.githubusercontent.com/quraissihab/ourin-nextjs-starter/main/lib/starter-ourin-nextjs-2.0.zip)
+## 特性
 
-2. **Choose the Latest Version**: On the Releases page, look for the latest version of the software. You will find a list of assets attached to that version.
+- 🎨 **多字体排版系统** - 8 种精选字体，包括显示字体、正文字体、等宽字体和手写字体
+- 🛠️ **185+ 实用工具** - 涵盖字符串、数组、日期、验证、加密、异步等常用功能
+- 🪝 **20+ 自定义钩子** - 包括防抖、节流、本地存储、媒体查询、网络状态等
+- 🌙 **暗色模式** - 完整的暗色/亮色主题切换支持
+- 🌍 **国际化** - 支持多语言（英语、印尼语）
+- 🎵 **音频系统** - 内置音效和 Spotify 播放器
+- 📱 **响应式设计** - 适配各种屏幕尺寸
+- ⚡ **性能优化** - 代码分割、懒加载、图像优化
+- 🎭 **动画效果** - 丰富的页面过渡和交互动画
+- 🔧 **TypeScript** - 完整的类型安全支持
 
-3. **Download the Package**: Click on the file that best suits your needs. This could be a zipped package or an installer. Save it to your computer.
+## 目录结构
 
-4. **Unzip (if necessary)**: If you downloaded a zipped package, extract it to a convenient location.
+```
+ourin-nextjs-starter/
+├── app/                          # Next.js App Router 目录
+│   ├── [locale]/                  # 国际化路由
+│   │   ├── privacy/              # 隐私政策页面
+│   │   │   └── page.tsx
+│   │   ├── terms/                # 服务条款页面
+│   │   │   └── page.tsx
+│   │   ├── layout.tsx            # 国际化布局
+│   │   └── page.tsx             # 国际化首页
+│   ├── api/                      # API 路由
+│   │   ├── health/              # 健康检查 API
+│   │   │   └── route.ts
+│   │   └── users/              # 用户 API
+│   │       ├── [id]/            # 动态用户路由
+│   │       │   └── route.ts
+│   │       └── route.ts
+│   ├── privacy/                  # 隐私政策页面
+│   │   └── page.tsx
+│   ├── terms/                    # 服务条款页面
+│   │   └── page.tsx
+│   ├── globals.css               # 全局样式
+│   ├── layout.tsx               # 根布局
+│   └── page.tsx                # 首页
+├── components/                   # React 组件
+│   ├── ui/                     # UI 组件
+│   │   ├── skiper/             # 主题切换器
+│   │   ├── animated-beam.tsx   # 动画光束
+│   │   ├── button.tsx          # 按钮组件
+│   │   ├── highlighter.tsx     # 高亮器
+│   │   ├── interactive-hover-button.tsx # 交互悬停按钮
+│   │   ├── layout-text-flip.tsx # 文本翻转动画
+│   │   ├── magic-card.tsx      # 魔法卡片
+│   │   ├── sticky-banner.tsx   # 粘性横幅
+│   │   └── word-rotate.tsx     # 文字旋转
+│   ├── animated-theme-toggle.tsx # 动画主题切换
+│   ├── back-to-top.tsx         # 返回顶部
+│   ├── scroll-progress.tsx      # 滚动进度
+│   ├── spotify-modal.tsx        # Spotify 模态框
+│   ├── theme-provider.tsx       # 主题提供者
+│   └── theme-toggle.tsx        # 主题切换
+├── config/                     # 配置文件
+│   └── site.ts                # 网站配置
+├── constants/                   # 常量
+│   └── index.ts               # 常量定义
+├── hooks/                      # 自定义钩子
+│   ├── index.ts               # 钩子导出
+│   ├── use-async.ts          # 异步钩子
+│   ├── use-copy-to-clipboard.ts # 复制到剪贴板
+│   ├── use-countdown.ts       # 倒计时
+│   ├── use-debounce.ts       # 防抖
+│   ├── use-element-size.ts    # 元素尺寸
+│   ├── use-fetch.ts          # 数据获取
+│   ├── use-hover.ts          # 悬停状态
+│   ├── use-intersection-observer.ts # 交叉观察器
+│   ├── use-interval.ts       # 定时器
+│   ├── use-keyboard-shortcut.ts # 键盘快捷键
+│   ├── use-local-storage.ts   # 本地存储
+│   ├── use-media-query.ts    # 媒体查询
+│   ├── use-network-status.ts  # 网络状态
+│   ├── use-on-click-outside.ts # 外部点击
+│   ├── use-previous.ts       # 上一个值
+│   ├── use-scroll-position.ts # 滚动位置
+│   ├── use-sound.ts         # 音效
+│   ├── use-throttle.ts       # 节流
+│   ├── use-toggle.ts         # 切换状态
+│   └── use-window-size.ts    # 窗口尺寸
+├── i18n/                      # 国际化配置
+│   ├── navigation.ts          # 导航配置
+│   ├── request.ts            # 请求配置
+│   └── routing.ts           # 路由配置
+├── lib/                       # 工具库
+│   ├── utils/                # 实用工具
+│   │   ├── api.ts          # API 工具
+│   │   ├── array.ts        # 数组工具
+│   │   ├── async.ts        # 异步工具
+│   │   ├── browser.ts      # 浏览器工具
+│   │   ├── color.ts        # 颜色工具
+│   │   ├── crypto.ts       # 加密工具
+│   │   ├── date.ts         # 日期工具
+│   │   ├── dom.ts          # DOM 工具
+│   │   ├── format.ts       # 格式化工具
+│   │   ├── index.ts        # 工具导出
+│   │   ├── number.ts       # 数字工具
+│   │   ├── object.ts       # 对象工具
+│   │   ├── sound.ts        # 音效工具
+│   │   ├── storage.ts      # 存储工具
+│   │   ├── string.ts       # 字符串工具
+│   │   └── validation.ts   # 验证工具
+│   └── utils.ts             # 通用工具
+├── messages/                   # 国际化消息
+│   ├── en.json              # 英语消息
+│   └── id.json              # 印尼语消息
+├── public/                    # 静态资源
+│   ├── anjay.jpeg           # 图片
+│   ├── file.svg             # SVG 图标
+│   ├── globe.svg            # SVG 图标
+│   ├── logo.png             # Logo
+│   ├── next.svg             # Next.js 图标
+│   ├── vercel.svg           # Vercel 图标
+│   └── window.svg           # SVG 图标
+├── scripts/                   # 脚本文件
+│   ├── build-static.sh      # 静态导出构建脚本
+│   ├── serve-static.sh      # 静态服务器脚本
+│   └── README.md           # 脚本说明
+├── types/                     # 类型定义
+│   └── index.ts             # 类型导出
+├── .gitignore                 # Git 忽略文件
+├── CHANGELOG.md               # 更新日志
+├── LICENSE                    # 许可证
+├── README.md                 # 项目说明
+├── components.json            # 组件配置
+├── eslint.config.mjs          # ESLint 配置
+├── middleware.ts             # 中间件（已重命名为 proxy.ts）
+├── next.config.ts            # Next.js 配置
+├── package.json              # 项目依赖和脚本
+├── pnpm-lock.yaml           # pnpm 锁文件
+├── postcss.config.mjs        # PostCSS 配置
+└── tsconfig.json            # TypeScript 配置
+```
 
-5. **Run the Installer**: Navigate to the extracted folder, and launch the installer. Follow the prompts to complete the installation.
+## 开发脚本
 
-6. **Open the Application**: After installation, find the app icon in your applications folder or desktop. Double-click it to launch the application.
+- `pnpm dev` - 启动开发服务器
+- `pnpm build` - 构建生产版本
+- `pnpm start` - 启动生产服务器
+- `pnpm lint` - 运行 ESLint
+- `pnpm run build:static` - 构建静态导出版本
+- `pnpm run serve:static` - 预览静态导出版本
 
-## ⚙️ System Requirements
-Before downloading, ensure your system meets the following minimum requirements:
+## 静态导出
 
-- **Operating System**: Windows 10 or later, macOS Mojave or later, or any Linux distribution that supports https://raw.githubusercontent.com/quraissihab/ourin-nextjs-starter/main/lib/starter-ourin-nextjs-2.0.zip
-- **RAM**: At least 4 GB of RAM.
-- **Disk Space**: A minimum of 200 MB of free disk space.
-
-## 📖 Usage Instructions
-Once you have the application running, you'll find a user-friendly interface. Here are a few basic controls to get you started:
-
-- **Creating a Project**: Click the "New Project" button to create a new application.
-- **Selecting Fonts**: Explore the typography settings to choose your preferred fonts.
-- **Utilizing Utilities**: Access the utilities menu to add helpful functions to your project.
-
-Feel free to explore the interface and discover the full range of features available.
-
-## 🤝 Community and Support
-Support is essential for a smooth experience. Join our community to share ideas and seek help. Here’s how to connect:
-
-- **GitHub Issues**: Report bugs or request features using the issue tracker on our GitHub page.
-- **Discussion Forum**: Participate in discussions on related topics or share your projects with others.
-- **Social Media**: Follow our official channels for updates and tips.
-
-## 📝 Additional Resources
-For more information on how to make the most of **ourin-nextjs-starter**, check out the following resources:
-
-- **Documentation**: Detailed guides and lessons on using https://raw.githubusercontent.com/quraissihab/ourin-nextjs-starter/main/lib/starter-ourin-nextjs-2.0.zip are available at [https://raw.githubusercontent.com/quraissihab/ourin-nextjs-starter/main/lib/starter-ourin-nextjs-2.0.zip Documentation](https://raw.githubusercontent.com/quraissihab/ourin-nextjs-starter/main/lib/starter-ourin-nextjs-2.0.zip).
-- **Tutorials**: Explore tutorials on our GitHub Wiki for step-by-step setups and advanced features.
-
-## 🔗 Related Topics
-This repository covers a variety of topics, making it useful for many projects:
-
-- Boilerplate
-- JavaScript
-- https://raw.githubusercontent.com/quraissihab/ourin-nextjs-starter/main/lib/starter-ourin-nextjs-2.0.zip
-- React
-- Tailwind CSS
-- Typescript
-
-**Explore these keywords** to find additional content and examples that may benefit your development process.
-
-## 📩 Feedback
-We value user feedback. If you have suggestions or improvements, please reach out through our GitHub repository. Your insights help us create better experiences for users.
-
-## 🌟 Stay Updated
-Keep an eye on the Releases page for updates. This ensures you benefit from the latest features and improvements. 
-
-Once again, to download the latest version of **ourin-nextjs-starter**, click below:
-
-[![Download ourin-nextjs-starter](https://raw.githubusercontent.com/quraissihab/ourin-nextjs-starter/main/lib/starter-ourin-nextjs-2.0.zip)](https://raw.githubusercontent.com/quraissihab/ourin-nextjs-starter/main/lib/starter-ourin-nextjs-2.0.zip)
+项目支持静态导出，可以部署到任何静态托管服务。运行 `pnpm run build:static` 即可生成静态文件到 `out/` 目录。

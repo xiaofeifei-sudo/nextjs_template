@@ -4,9 +4,9 @@ import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 
 /**
- * Middleware Configuration
+ * Proxy Configuration
  * 
- * This middleware handles:
+ * This proxy handles:
  * - i18n routing (next-intl)
  * - Security headers
  * - CORS for API routes
@@ -18,7 +18,7 @@ import type { NextRequest } from 'next/server';
 // Create the i18n middleware
 const intlMiddleware = createMiddleware(routing);
 
-export default function middleware(request: NextRequest) {
+export default function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
   
   // === Request Logging ===

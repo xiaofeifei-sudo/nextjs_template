@@ -5,7 +5,12 @@ import createNextIntlPlugin from 'next-intl/plugin';
 const withNextIntl = createNextIntlPlugin('./i18n/request.ts');
 
 const nextConfig: NextConfig = {
-  // Add any other Next.js config options here
+  // Configure static export
+  output: 'export',
+  trailingSlash: true,
+  images: {
+    unoptimized: true
+  },
 };
 
 export default withNextIntl(nextConfig);
