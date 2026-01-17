@@ -48,9 +48,8 @@ export const siteConfig = {
   // Localization
   i18n: {
     defaultLocale: 'en',
-    locales: ['en', 'id'],
+    locales: ['en', 'zh-CN'],
   },
 } as const;
 
 export type SiteConfig = typeof siteConfig;
-

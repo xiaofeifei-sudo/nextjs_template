@@ -1,0 +1,126 @@
+{
+  "metadata": {
+    "title": "Ourin - Next.js 模板",
+    "description": "为你的 Next.js 项目准备的一套带有明确观点的组件、hooks 与工具集。"
+  },
+  "nav": {
+    "features": "特性",
+    "fonts": "字体",
+    "stats": "数据",
+    "docs": "文档",
+    "getStarted": "开始使用"
+  },
+  "hero": {
+    "badge": "v1.3 — 现已支持 i18n！",
+    "title": "终极",
+    "titleHighlight": "Next.js",
+    "titleEnd": "样板项目",
+    "subtitle": "以更快速度交付你的创业项目，内置",
+    "utilities": "185+ 工具函数",
+    "fonts": "16 款字体",
+    "components": "高级组件",
+    "and": "与",
+    "ctaPrimary": "免费开始",
+    "ctaSecondary": "在 GitHub 上加星"
+  },
+  "stats": {
+    "utilities": "工具函数",
+    "fonts": "Google 字体",
+    "hooks": "自定义 Hooks",
+    "css": "CSS 行数"
+  },
+  "features": {
+    "sectionLabel": "特性",
+    "title": "你需要的一切",
+    "subtitle": "用于构建现代 Web 应用的完整基础，内置最佳实践。",
+    "turbopack": {
+      "title": "Turbopack 就绪",
+      "description": "通过 Next.js Turbopack 获得 10x 更快的构建速度，已为最佳开发体验预配置。"
+    },
+    "fonts": {
+      "title": "16 款高级字体",
+      "description": "精心挑选的排版系统，涵盖标题、正文、衬线、等宽与手写体。"
+    },
+    "utilities": {
+      "title": "185+ 工具函数",
+      "description": "覆盖字符串、数组、日期、校验、加密等的海量辅助函数库。"
+    },
+    "shadcn": {
+      "title": "shadcn/ui 就绪",
+      "description": "预配置 shadcn/ui，开箱即用的漂亮且易用的组件。"
+    },
+    "typescript": {
+      "title": "类型安全",
+      "description": "全程严格 TypeScript，无 any，完整 IntelliSense 支持。"
+    },
+    "hooks": {
+      "title": "20+ 自定义 Hooks",
+      "description": "生产级 Hooks：防抖、数据请求、倒计时等一应俱全。"
+    },
+    "i18n": {
+      "title": "内置国际化",
+      "description": "基于 next-intl 的完整国际化支持，轻松新增多语言。"
+    },
+    "middleware": {
+      "title": "中间件就绪",
+      "description": "预配置安全头、CORS 与认证模式的中间件。"
+    }
+  },
+  "typography": {
+    "sectionLabel": "排版",
+    "title": "16 款精美字体",
+    "subtitle": "通过 next/font 进行最优加载，无布局抖动，自动优化。"
+  },
+  "code": {
+    "sectionLabel": "开发体验",
+    "title": "令人愉悦的代码",
+    "subtitle": "直觉化的工具与 Hooks，仿佛原本就属于 React。",
+    "handwritten": "告别到处粘贴 utils.ts！",
+    "fullyTyped": "完整类型",
+    "treeShakeable": "可树摇",
+    "zeroDeps": "零依赖"
+  },
+  "updates": {
+    "sectionLabel": "更新内容",
+    "title": "版本更新",
+    "subtitle": "查看每个版本新增了什么。",
+    "v13": {
+      "title": "v1.3 — 国际化",
+      "description": "基于 next-intl 的完整 i18n 支持。包含英文与简体中文，轻松新增更多语言。"
+    },
+    "v12": {
+      "title": "v1.2 — API 与中间件",
+      "description": "示例 API 路由包含 CRUD、分页；中间件支持安全头与 CORS。"
+    },
+    "v11": {
+      "title": "v1.1 — 扩展排版",
+      "description": "新增 10 款字体（共 16 款），高级 UI 重设计，包含动画与渐变效果。"
+    },
+    "v10": {
+      "title": "v1.0 — 初始发布",
+      "description": "145+ 工具函数、15+ Hooks、6 款字体、shadcn/ui、Tailwind 4、Next.js 16、React 19。"
+    }
+  },
+  "cta": {
+    "title": "准备更快交付？",
+    "subtitle": "立即使用 Ourin 开始构建你的下一个项目。免费、开源、MIT 许可。",
+    "primary": "开始构建",
+    "secondary": "阅读文档"
+  },
+  "footer": {
+    "description": "现代 Web 开发的终极 Next.js 样板。在极短时间内交付你的创业项目。",
+    "quickLinks": "快速链接",
+    "legal": "法律",
+    "privacy": "隐私政策",
+    "terms": "服务条款",
+    "license": "MIT 许可",
+    "madeWith": "构建于",
+    "by": "作者",
+    "starUs": "在 GitHub 加星"
+  },
+  "languageSwitcher": {
+    "label": "语言",
+    "en": "English",
+    "zh-CN": "简体中文"
+  }
+}
