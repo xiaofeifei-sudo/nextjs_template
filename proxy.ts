@@ -4,13 +4,13 @@ import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 
 /**
- * Proxy Configuration
+ * 代理配置
  * 
- * This proxy handles:
- * - i18n routing (next-intl)
- * - Security headers
- * - CORS for API routes
- * - Request logging
+ * 此代理处理：
+ * - i18n 路由 (next-intl)
+ * - 安全头
+ * - API 路由的 CORS
+ * - 请求日志记录
  * 
  * @see https://next-intl.dev/docs/getting-started/app-router
  */
@@ -33,7 +33,7 @@ export default function proxy(request: NextRequest) {
   ) {
     const response = NextResponse.next();
     
-    // Add security headers for API routes
+    // 为 API 路由添加安全头
     if (pathname.startsWith('/api/')) {
       response.headers.set('Access-Control-Allow-Origin', '*');
       response.headers.set('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
@@ -43,10 +43,10 @@ export default function proxy(request: NextRequest) {
     return response;
   }
 
-  // Handle i18n routing for all other paths
+  // 处理所有其他路径的 i18n 路由
   const response = intlMiddleware(request);
   
-  // === Add Security Headers ===
+  // === 添加安全头 ===
   response.headers.set('X-Frame-Options', 'DENY');
   response.headers.set('X-Content-Type-Options', 'nosniff');
   response.headers.set('Referrer-Policy', 'strict-origin-when-cross-origin');
@@ -57,11 +57,11 @@ export default function proxy(request: NextRequest) {
 
 export const config = {
   matcher: [
-    // Match all pathnames except for
-    // - ... if they start with `/_next`, `/api/`, `/_vercel`
-    // - ... if they contain a dot (static files)
+    // 匹配所有路径名，除了：
+    // - 以 `/_next`, `/api/`, `/_vercel` 开头的路径
+    // - 包含点的路径（静态文件）
     '/((?!_next|api|_vercel|.*\\..*).*)',
-    // However, match all pathnames within `/api` for CORS
+    // 但是，匹配 `/api` 内的所有路径名以处理 CORS
     '/api/:path*',
   ],
 };

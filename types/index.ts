@@ -106,7 +106,7 @@ export interface Toast {
 }
 
 // ============================================
-// Component Props Types
+// 组件属性类型
 // ============================================
 
 export interface BaseProps {
@@ -127,7 +127,7 @@ export interface WithError {
 }
 
 // ============================================
-// Navigation Types
+// 导航类型
 // ============================================
 
 export interface NavItem {
@@ -145,7 +145,7 @@ export interface Breadcrumb {
 }
 
 // ============================================
-// Table Types
+// 表格类型
 // ============================================
 
 export interface TableColumn<T> {
@@ -162,7 +162,7 @@ export interface SortState {
 }
 
 // ============================================
-// Modal / Dialog Types
+// 模态框 / 对话框类型
 // ============================================
 
 export interface ModalProps {
@@ -199,8 +199,8 @@ export type Entries<T> = {
   [K in keyof T]: [K, T[K]];
 }[keyof T][];
 
-// Make specific keys required
+// 使特定键变为必需
 export type RequireKeys<T, K extends keyof T> = T & Required<Pick<T, K>>;
 
-// Make specific keys optional
+// 使特定键变为可选
 export type OptionalKeys<T, K extends keyof T> = Omit<T, K> & Partial<Pick<T, K>>;
