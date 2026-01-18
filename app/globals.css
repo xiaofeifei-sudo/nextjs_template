@@ -9,28 +9,28 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-jakarta);
   --font-mono: var(--font-jetbrains);
-  
+
   /* 标题与展示字体 */
   --font-display: var(--font-outfit);
   --font-space: var(--font-space-grotesk);
   --font-poppins: var(--font-poppins);
   --font-raleway: var(--font-raleway);
   --font-manrope: var(--font-manrope);
-  
+
   /* 正文文本字体 */
   --font-inter: var(--font-inter);
   --font-nunito: var(--font-nunito);
   --font-dm: var(--font-dm-sans);
   --font-source: var(--font-source-sans);
-  
+
   /* Serif 与优雅风格字体 */
   --font-serif: var(--font-playfair);
   --font-lora: var(--font-lora);
   --font-merriweather: var(--font-merriweather);
-  
+
   /* 等宽字体 */
   --font-code: var(--font-fira-code);
-  
+
   /* 手写风格字体 */
   --font-hand: var(--font-caveat);
   --color-sidebar-ring: var(--sidebar-ring);
