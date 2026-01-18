@@ -65,8 +65,8 @@ export function generateStaticParams() {
 }
 
 export const metadata: Metadata = {
-  title: "Ourin - Next.js Boilerplate",
-  description: "An opinionated collection of components, hooks, and utilities for your Next.js project.",
+  title: "Layout",
+  description: "Layout for Next.js Boilerplate",
 };
 
 type Props = {

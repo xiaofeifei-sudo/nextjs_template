@@ -3,10 +3,10 @@
 import { useState, useEffect } from 'react';
 
 /**
- * useMediaQuery - Check if media query matches
+ * useMediaQuery - 判断媒体查询是否匹配
  * 
- * @param query - CSS media query string
- * @returns boolean indicating if query matches
+ * @param query - CSS 媒体查询字符串
+ * @returns 布尔值，表示查询是否匹配
  * 
  * @example
  * const isMobile = useMediaQuery('(max-width: 768px)');
@@ -19,7 +19,9 @@ export function useMediaQuery(query: string): boolean {
     if (typeof window === 'undefined') return;
 
     const mediaQuery = window.matchMedia(query);
-    setMatches(mediaQuery.matches);
+    requestAnimationFrame(() => {
+      setMatches(mediaQuery.matches);
+    });
 
     const handler = (event: MediaQueryListEvent) => {
       setMatches(event.matches);
@@ -32,7 +34,7 @@ export function useMediaQuery(query: string): boolean {
   return matches;
 }
 
-// Preset breakpoint hooks
+// 预设断点相关的便捷 Hook
 export function useIsMobile(): boolean {
   return useMediaQuery('(max-width: 767px)');
 }

@@ -12,14 +12,14 @@ interface ScrollPosition {
 }
 
 /**
- * useScrollPosition - Track scroll position and direction
+ * useScrollPosition - 跟踪滚动位置与方向
  * 
- * @returns ScrollPosition object
+ * @returns ScrollPosition 对象
  * 
  * @example
  * const { y, direction, isAtTop, percentage } = useScrollPosition();
  * 
- * // Show/hide header based on scroll direction
+ * // 根据滚动方向显示/隐藏头部
  * const showHeader = direction === 'up' || isAtTop;
  */
 export function useScrollPosition(): ScrollPosition {
@@ -68,7 +68,7 @@ export function useScrollPosition(): ScrollPosition {
       }
     };
 
-    // Initialize
+    // 初始化
     updateScrollPosition();
 
     window.addEventListener('scroll', handleScroll, { passive: true });

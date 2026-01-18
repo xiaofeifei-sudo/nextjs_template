@@ -3,15 +3,15 @@
 import { useCallback, useRef } from 'react';
 
 /**
- * useThrottle - Throttle a callback function
+ * useThrottle - 对回调函数进行节流
  * 
- * @param callback - Function to throttle
- * @param delay - Delay in milliseconds
- * @returns Throttled function
+ * @param callback - 需要节流的函数
+ * @param delay - 延迟时间（毫秒）
+ * @returns 节流后的函数
  * 
  * @example
  * const throttledScroll = useThrottle((e) => {
- *   console.log('Scroll event:', e);
+ *   console.log('滚动事件:', e);
  * }, 100);
  * 
  * window.addEventListener('scroll', throttledScroll);

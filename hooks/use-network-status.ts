@@ -1,8 +1,8 @@
-import { useState, useEffect, useCallback, useRef } from 'react';
+import { useState, useEffect } from 'react';
 
 /**
  * useNetworkStatus
- * Track online/offline status and connection quality
+ * 跟踪在线/离线状态与网络连接质量
  * 
  * @example
  * const { isOnline, connectionType, effectiveType } = useNetworkStatus();

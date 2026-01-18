@@ -18,7 +18,7 @@ interface UseFetchOptions<T> {
 
 /**
  * useFetch
- * Declarative data fetching hook with caching and refetch support
+ * 声明式数据请求 Hook，支持缓存与定时重新请求
  * 
  * @example
  * const { data, isLoading, error, refetch } = useFetch('/api/users');
@@ -84,7 +84,7 @@ export function useFetch<T>(
     fetchData();
   }, [fetchData]);
 
-  // Refetch interval
+  // 定时重新请求
   useEffect(() => {
     if (!refetchInterval || !enabled) return;
 

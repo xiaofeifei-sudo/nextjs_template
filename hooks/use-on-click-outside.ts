@@ -3,10 +3,10 @@
 import { useEffect, RefObject } from 'react';
 
 /**
- * useOnClickOutside - Detect clicks outside of element
+ * useOnClickOutside - 检测点击是否发生在元素外部
  * 
- * @param ref - React ref of the element
- * @param handler - Callback when clicked outside
+ * @param ref - 元素的 React ref
+ * @param handler - 在元素外部点击时触发的回调
  * 
  * @example
  * const ref = useRef<HTMLDivElement>(null);
@@ -20,7 +20,7 @@ export function useOnClickOutside<T extends HTMLElement = HTMLElement>(
     const listener = (event: MouseEvent | TouchEvent) => {
       const el = ref?.current;
       
-      // Do nothing if clicking ref's element or descendent elements
+      // 如果点击的是当前元素或其子元素则不处理
       if (!el || el.contains(event.target as Node)) {
         return;
       }

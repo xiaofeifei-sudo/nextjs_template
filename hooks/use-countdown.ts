@@ -17,7 +17,7 @@ interface UseCountdownReturn {
 
 /**
  * useCountdown
- * Countdown timer with start, pause, reset controls
+ * 倒计时定时器，支持开始、暂停、重置等控制
  * 
  * @example
  * const { count, isRunning, start, pause, reset } = useCountdown(60);

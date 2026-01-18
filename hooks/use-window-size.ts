@@ -8,9 +8,9 @@ interface WindowSize {
 }
 
 /**
- * useWindowSize - Track window dimensions
+ * useWindowSize - 跟踪窗口尺寸
  * 
- * @returns WindowSize object with width and height
+ * @returns 包含宽度与高度的 WindowSize 对象
  * 
  * @example
  * const { width, height } = useWindowSize();
@@ -32,7 +32,7 @@ export function useWindowSize(): WindowSize {
       });
     };
 
-    // Initialize
+    // 初始化
     handleResize();
 
     window.addEventListener('resize', handleResize);

@@ -12,20 +12,20 @@ interface UseKeyboardShortcutOptions {
 }
 
 /**
- * useKeyboardShortcut - Handle keyboard shortcuts
+ * useKeyboardShortcut - 处理键盘快捷键
  * 
- * @param keys - Array of keys (e.g., ['ctrl', 'k'])
- * @param callback - Function to call when shortcut is triggered
- * @param options - Options for the shortcut
+ * @param keys - 键数组（例如 ['ctrl', 'k']）
+ * @param callback - 触发快捷键时调用的函数
+ * @param options - 快捷键配置项
  * 
  * @example
- * // Single key
+ * // 单键
  * useKeyboardShortcut(['Escape'], () => setIsOpen(false));
  * 
- * // Combo (Ctrl+K)
+ * // 组合键（Ctrl+K）
  * useKeyboardShortcut(['ctrl', 'k'], () => openCommandPalette());
  * 
- * // Combo (Ctrl+Shift+P)
+ * // 组合键（Ctrl+Shift+P）
  * useKeyboardShortcut(['ctrl', 'shift', 'p'], () => openSettings());
  */
 export function useKeyboardShortcut(
@@ -36,7 +36,9 @@ export function useKeyboardShortcut(
   const { enabled = true, preventDefault = true, stopPropagation = false } = options;
   
   const callbackRef = useRef(callback);
-  callbackRef.current = callback;
+  useEffect(() => {
+    callbackRef.current = callback;
+  }, [callback]);
 
   const handleKeyDown = useCallback(
     (event: KeyboardEvent) => {

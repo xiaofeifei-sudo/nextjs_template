@@ -16,16 +16,16 @@ interface UseAsyncReturn<T> extends AsyncState<T> {
 }
 
 /**
- * useAsync - Handle async operations with loading, error, and data states
+ * useAsync - 统一管理异步操作的加载、错误与数据状态
  * 
- * @param asyncFunction - Async function to execute
- * @param immediate - Whether to execute immediately on mount
- * @returns Object with data, error, loading states, and execute function
+ * @param asyncFunction - 要执行的异步函数
+ * @param immediate - 是否在组件挂载时立即执行
+ * @returns 包含 data、error、loading 状态以及 execute 函数的对象
  * 
  * @example
  * const { data, isLoading, isError, execute } = useAsync(
  *   () => fetch('/api/data').then(res => res.json()),
- *   true // execute immediately
+ *   true // 组件挂载后立即执行
  * );
  */
 export function useAsync<T>(
@@ -81,7 +81,9 @@ export function useAsync<T>(
 
   useEffect(() => {
     if (immediate) {
-      execute();
+      setTimeout(() => {
+        execute();
+      }, 0);
     }
   }, [execute, immediate]);
 

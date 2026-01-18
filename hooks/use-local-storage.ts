@@ -3,10 +3,10 @@
 import { useState, useEffect, useCallback } from 'react';
 
 /**
- * useLocalStorage - Sync state with localStorage
+ * useLocalStorage - 将状态与 localStorage 同步
  * 
- * @param key - localStorage key
- * @param initialValue - Initial value if key doesn't exist
+ * @param key - localStorage 键名
+ * @param initialValue - 当键不存在时的初始值
  * @returns [value, setValue, removeValue]
  * 
  * @example
@@ -16,7 +16,7 @@ export function useLocalStorage<T>(
   key: string,
   initialValue: T
 ): [T, (value: T | ((val: T) => T)) => void, () => void] {
-  // Get value from localStorage or use initial value
+  // 从 localStorage 获取值或使用初始值
   const readValue = useCallback((): T => {
     if (typeof window === 'undefined') {
       return initialValue;
@@ -33,7 +33,7 @@ export function useLocalStorage<T>(
 
   const [storedValue, setStoredValue] = useState<T>(readValue);
 
-  // Return a wrapped version of useState's setter function
+  // 返回包装后的 useState 设置函数
   const setValue = useCallback(
     (value: T | ((val: T) => T)) => {
       try {
@@ -53,7 +53,7 @@ export function useLocalStorage<T>(
     [key, storedValue]
   );
 
-  // Remove value from localStorage
+  // 从 localStorage 删除值
   const removeValue = useCallback(() => {
     try {
       if (typeof window !== 'undefined') {
@@ -66,7 +66,7 @@ export function useLocalStorage<T>(
     }
   }, [key, initialValue]);
 
-  // Listen for changes in other tabs/windows
+  // 监听其他标签页/窗口中的更改
   useEffect(() => {
     const handleStorageChange = (event: StorageEvent) => {
       if (event.key === key && event.newValue !== null) {

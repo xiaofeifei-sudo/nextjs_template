@@ -15,9 +15,9 @@ interface IntersectionResult {
 }
 
 /**
- * useIntersectionObserver - Observe element visibility in viewport
+ * useIntersectionObserver - 观察元素在视口中的可见性
  * 
- * @param options - IntersectionObserver options
+ * @param options - IntersectionObserver 配置项
  * @returns [ref, result]
  * 
  * @example
@@ -28,7 +28,7 @@ interface IntersectionResult {
  * 
  * return (
  *   <div ref={ref} className={isIntersecting ? 'visible' : 'hidden'}>
- *     Content
+ *     内容
  *   </div>
  * );
  */

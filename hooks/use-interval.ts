@@ -1,8 +1,8 @@
-import { useEffect, useRef, useCallback } from 'react';
+import { useEffect, useRef } from 'react';
 
 /**
  * useInterval
- * Declarative setInterval with pause support
+ * 声明式 setInterval，支持暂停
  * 
  * @example
  * useInterval(() => console.log('tick'), 1000);
@@ -11,12 +11,12 @@ import { useEffect, useRef, useCallback } from 'react';
 export function useInterval(callback: () => void, delay: number | null) {
   const savedCallback = useRef(callback);
 
-  // Remember the latest callback
+  // 记住最新的回调
   useEffect(() => {
     savedCallback.current = callback;
   }, [callback]);
 
-  // Set up the interval
+  // 设置定时器
   useEffect(() => {
     if (delay === null) return;
 
