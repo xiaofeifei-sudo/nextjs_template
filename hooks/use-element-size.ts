@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect } from 'react';
 
 interface Dimensions {
   width: number;
@@ -7,7 +7,7 @@ interface Dimensions {
 
 /**
  * useElementSize
- * Track the size of an element using ResizeObserver
+ * 使用 ResizeObserver 跟踪元素尺寸变化
  * 
  * @example
  * const { ref, width, height } = useElementSize();
@@ -30,10 +30,12 @@ export function useElementSize<T extends HTMLElement = HTMLElement>() {
 
     observer.observe(ref);
     
-    // Set initial size
-    setSize({
-      width: ref.offsetWidth,
-      height: ref.offsetHeight,
+    // 设置初始尺寸
+    requestAnimationFrame(() => {
+      setSize({
+        width: ref.offsetWidth,
+        height: ref.offsetHeight,
+      });
     });
 
     return () => observer.disconnect();

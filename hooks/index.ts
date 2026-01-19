@@ -1,6 +1,6 @@
 /**
- * Custom Hooks - Barrel Export
- * Re-export all hooks from a single entry point
+ * 自定义 Hooks - 汇总导出
+ * 从单一入口重新导出所有 hooks
  */
 
 export { useDebounce } from './use-debounce';
@@ -26,12 +26,12 @@ export { useIntersectionObserver } from './use-intersection-observer';
 export { useHover } from './use-hover';
 export { useKeyboardShortcut } from './use-keyboard-shortcut';
 
-// New in v1.2
+// v1.2 新增
 export { useNetworkStatus } from './use-network-status';
 export { useFetch } from './use-fetch';
 export { useCountdown } from './use-countdown';
 export { useElementSize } from './use-element-size';
 export { useInterval } from './use-interval';
 
-// New in v1.4 - Sound
+// v1.4 新增 - 声音
 export { useSound, useSoundEffects } from './use-sound';

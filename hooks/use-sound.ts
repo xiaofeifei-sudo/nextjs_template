@@ -3,55 +3,55 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 
 /**
- * Options for the useSound hook
+ * useSound 的配置项
  */
 export interface UseSoundOptions {
-  /** Volume level (0-1). Default: 1 */
+  /** 音量级别（0-1），默认：1 */
   volume?: number;
-  /** Whether to loop the sound. Default: false */
+  /** 是否循环播放，默认：false */
   loop?: boolean;
-  /** Playback rate (0.5-4). Default: 1 */
+  /** 播放速率（0.5-4），默认：1 */
   playbackRate?: number;
-  /** Whether to preload the sound. Default: true */
+  /** 是否预加载音频，默认：true */
   preload?: boolean;
-  /** Callback when sound finishes playing */
+  /** 播放结束回调 */
   onEnd?: () => void;
-  /** Callback when sound starts playing */
+  /** 开始播放回调 */
   onPlay?: () => void;
-  /** Callback on error */
+  /** 异常回调 */
   onError?: (error: Error) => void;
 }
 
 /**
- * Return type for useSound hook
+ * useSound 的返回类型
  */
 export interface UseSoundReturn {
-  /** Play the sound */
+  /** 播放音频 */
   play: () => void;
-  /** Stop the sound */
+  /** 停止播放 */
   stop: () => void;
-  /** Pause the sound */
+  /** 暂停播放 */
   pause: () => void;
-  /** Resume a paused sound */
+  /** 继续播放已暂停的音频 */
   resume: () => void;
-  /** Whether the sound is currently playing */
+  /** 当前是否正在播放 */
   isPlaying: boolean;
-  /** Current playback time in seconds */
+  /** 当前播放时间（秒） */
   currentTime: number;
-  /** Total duration in seconds */
+  /** 总时长（秒） */
   duration: number;
-  /** Set volume (0-1) */
+  /** 设置音量（0-1） */
   setVolume: (volume: number) => void;
-  /** Set playback rate (0.5-4) */
+  /** 设置播放速率（0.5-4） */
   setPlaybackRate: (rate: number) => void;
 }
 
 /**
- * React hook for playing sounds
+ * 播放音频的 React Hook
  * 
- * @param src - Path to the audio file
- * @param options - Sound options
- * @returns Sound controls and state
+ * @param src - 音频文件路径
+ * @param options - 声音配置项
+ * @returns 播放控制与状态
  * 
  * @example
  * ```tsx
@@ -67,13 +67,13 @@ export interface UseSoundReturn {
  * function MusicPlayer() {
  *   const { play, pause, isPlaying, duration, currentTime } = useSound('/music.mp3', {
  *     loop: true,
- *     onEnd: () => console.log('Song ended')
+ *     onEnd: () => console.log('歌曲播放结束')
  *   });
  *   
  *   return (
  *     <div>
  *       <button onClick={isPlaying ? pause : play}>
- *         {isPlaying ? 'Pause' : 'Play'}
+ *         {isPlaying ? '暂停' : '播放'}
  *       </button>
  *       <span>{currentTime} / {duration}</span>
  *     </div>
@@ -97,7 +97,7 @@ export function useSound(src: string, options: UseSoundOptions = {}): UseSoundRe
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
 
-  // Initialize audio element
+  // 初始化音频元素
   useEffect(() => {
     if (typeof window === 'undefined') return;
 
@@ -107,7 +107,7 @@ export function useSound(src: string, options: UseSoundOptions = {}): UseSoundRe
     audio.playbackRate = playbackRate;
     audio.preload = preload ? 'auto' : 'none';
 
-    // Event handlers
+    // 事件处理函数
     const handleEnded = () => {
       setIsPlaying(false);
       setCurrentTime(0);
@@ -155,16 +155,16 @@ export function useSound(src: string, options: UseSoundOptions = {}): UseSoundRe
       audio.removeEventListener('loadedmetadata', handleLoadedMetadata);
       audioRef.current = null;
     };
-  }, [src, loop, preload]); // Note: not including callbacks to avoid re-creating audio
+  }, [src, loop, preload]); // 注意：不包含回调，避免重复创建音频实例
 
-  // Update volume when option changes
+  // 当配置变化时更新音量
   useEffect(() => {
     if (audioRef.current) {
       audioRef.current.volume = Math.max(0, Math.min(1, volume));
     }
   }, [volume]);
 
-  // Update playback rate when option changes
+  // 当配置变化时更新播放速率
   useEffect(() => {
     if (audioRef.current) {
       audioRef.current.playbackRate = playbackRate;
@@ -174,13 +174,13 @@ export function useSound(src: string, options: UseSoundOptions = {}): UseSoundRe
   const play = useCallback(() => {
     if (!audioRef.current) return;
     
-    // Reset to beginning if at end
+    // 如果已播放到结尾则重置到开头
     if (audioRef.current.ended) {
       audioRef.current.currentTime = 0;
     }
     
     audioRef.current.play().catch((error) => {
-      console.warn('Sound playback failed:', error);
+      console.warn('音频播放失败:', error);
     });
   }, []);
 
@@ -227,8 +227,8 @@ export function useSound(src: string, options: UseSoundOptions = {}): UseSoundRe
 }
 
 /**
- * Simplified hook for quick hover/click sounds
- * Uses Web Audio API - no audio files needed
+ * 简化 Hook，用于快速生成悬停/点击音效
+ * 使用 Web Audio API，无需音频文件
  * 
  * @example
  * ```tsx

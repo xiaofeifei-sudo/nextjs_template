@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef, RefObject } from 'react';
 
 /**
- * useHover - Detect element hover state
+ * useHover - 监听元素的悬停状态
  * 
  * @returns [ref, isHovered]
  * 
@@ -12,7 +12,7 @@ import { useState, useEffect, useRef, RefObject } from 'react';
  * 
  * return (
  *   <div ref={ref} style={{ color: isHovered ? 'red' : 'black' }}>
- *     Hover me!
+ *     鼠标移到我这里！
  *   </div>
  * );
  */

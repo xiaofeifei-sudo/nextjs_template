@@ -3,18 +3,18 @@
 import { useState, useEffect } from 'react';
 
 /**
- * useDebounce - Debounce a value with specified delay
+ * useDebounce - 根据指定延迟对值进行防抖
  * 
- * @param value - Value to debounce
- * @param delay - Delay in milliseconds
- * @returns Debounced value
+ * @param value - 需要防抖的值
+ * @param delay - 延迟时间（毫秒）
+ * @returns 防抖后的值
  * 
  * @example
  * const [search, setSearch] = useState('');
  * const debouncedSearch = useDebounce(search, 500);
  * 
  * useEffect(() => {
- *   // This will only run after 500ms of no changes
+ *   // 只有在 500ms 内没有变化时才会触发
  *   fetchSearchResults(debouncedSearch);
  * }, [debouncedSearch]);
  */

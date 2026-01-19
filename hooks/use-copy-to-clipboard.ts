@@ -9,16 +9,16 @@ interface CopyToClipboardResult {
 }
 
 /**
- * useCopyToClipboard - Copy text to clipboard
+ * useCopyToClipboard - 复制文本到剪贴板
  * 
- * @param resetDelay - Delay in ms to reset isCopied state
- * @returns Object with isCopied state and copyToClipboard function
+ * @param resetDelay - 重置 isCopied 状态的延迟时间（毫秒）
+ * @returns 包含 isCopied 状态与 copyToClipboard 函数的对象
  * 
  * @example
  * const { isCopied, copyToClipboard } = useCopyToClipboard();
  * 
  * <button onClick={() => copyToClipboard('Hello!')}>
- *   {isCopied ? 'Copied!' : 'Copy'}
+ *   {isCopied ? '已复制！' : '复制'}
  * </button>
  */
 export function useCopyToClipboard(

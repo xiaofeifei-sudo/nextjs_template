@@ -1,12 +1,12 @@
 'use client';
 
-import { useRef, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 /**
- * usePrevious - Get the previous value of a state
+ * usePrevious - 获取状态的前一个值
  * 
- * @param value - Current value
- * @returns Previous value
+ * @param value - 当前值
+ * @returns 上一个值
  * 
  * @example
  * const [count, setCount] = useState(0);
@@ -15,11 +15,11 @@ import { useRef, useEffect } from 'react';
  * console.log(`Count changed from ${prevCount} to ${count}`);
  */
 export function usePrevious<T>(value: T): T | undefined {
-  const ref = useRef<T | undefined>(undefined);
+  const [prev, setPrev] = useState<T | undefined>(undefined);
 
   useEffect(() => {
-    ref.current = value;
+    setPrev(value);
   }, [value]);
 
-  return ref.current;
+  return prev;
 }

@@ -32,6 +32,7 @@ import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, setRequestLocale } from 'next-intl/server';
 import { routing } from '@/i18n/routing';
 import { notFound } from 'next/navigation';
+import type { Locale } from '@/i18n/routing';
 
 // === Font Configurations ===
 const outfit = Outfit({ variable: "--font-outfit", subsets: ["latin"] });
@@ -64,8 +65,8 @@ export function generateStaticParams() {
 }
 
 export const metadata: Metadata = {
-  title: "Ourin - Next.js Boilerplate",
-  description: "An opinionated collection of components, hooks, and utilities for your Next.js project.",
+  title: "Layout",
+  description: "Layout for Next.js Boilerplate",
 };
 
 type Props = {
@@ -77,7 +78,7 @@ export default async function LocaleLayout({ children, params }: Props) {
   const { locale } = await params;
   
   // Validate locale
-  if (!routing.locales.includes(locale as 'en' | 'id')) {
+  if (!routing.locales.includes(locale as Locale)) {
     notFound();
   }
 

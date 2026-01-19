@@ -19,7 +19,7 @@ const nextConfig: NextConfig = {
   // true: 所有 URL 都以 / 结尾 (如 /about/)
   // false: 所有 URL 都不以 / 结尾 (如 /about)
   // undefined: 保持原样
-  trailingSlash: true,
+  trailingSlash: false,
   
   // 自定义构建输出目录，默认为 '.next'
   // distDir: 'build',
