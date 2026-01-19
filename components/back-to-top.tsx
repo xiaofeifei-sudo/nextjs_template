@@ -6,26 +6,26 @@ import { ArrowUp } from 'lucide-react';
 import { useSoundEffects } from '@/hooks/use-sound';
 
 /**
- * BackToTop Component
+ * BackToTop 组件
  * 
- * A floating button that appears when user scrolls down and scrolls back to top when clicked.
- * Features smooth animation and sound effects.
+ * 一个悬浮按钮，用户向下滚动时出现，点击后滚动回到顶部。
+ * 具有平滑动画和音效。
  * 
  * @example
  * ```tsx
- * // In your layout or page
+ * // 在你的布局或页面中
  * <BackToTop />
  * ```
  */
 
 interface BackToTopProps {
-  /** Scroll threshold to show the button (in pixels). Default: 400 */
+  /** 显示按钮的滚动阈值（像素）。默认：400 */
   threshold?: number;
-  /** Position of the button. Default: 'bottom-right' */
+  /** 按钮位置。默认：'bottom-right' */
   position?: 'bottom-left' | 'bottom-right';
-  /** Smooth scroll behavior. Default: true */
+  /** 是否使用平滑滚动。默认：true */
   smooth?: boolean;
-  /** Show progress ring. Default: true */
+  /** 是否显示进度环。默认：true */
   showProgress?: boolean;
 }
 
@@ -50,7 +50,7 @@ export function BackToTop({
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
-    handleScroll(); // Initial check
+    handleScroll(); // 初始检查
     
     return () => window.removeEventListener('scroll', handleScroll);
   }, [threshold]);
@@ -64,10 +64,10 @@ export function BackToTop({
   }, [smooth, playClick]);
 
   const positionClasses = position === 'bottom-left' 
-    ? 'left-6 bottom-24' // Above Spotify button
+    ? 'left-6 bottom-24' // 位于 Spotify 按钮上方
     : 'right-6 bottom-6';
 
-  // SVG circle properties for progress ring
+  // 进度环的 SVG 圆形属性
   const size = 48;
   const strokeWidth = 3;
   const radius = (size - strokeWidth) / 2;
@@ -88,13 +88,14 @@ export function BackToTop({
           aria-label="Back to top"
         >
           {/* Progress ring */}
+          {/* 进度环 */}
           {showProgress && (
             <svg
               className="absolute inset-0 -rotate-90"
               width={size}
               height={size}
             >
-              {/* Background circle */}
+              {/* 背景圆 */}
               <circle
                 cx={size / 2}
                 cy={size / 2}
@@ -104,7 +105,7 @@ export function BackToTop({
                 strokeWidth={strokeWidth}
                 className="opacity-20"
               />
-              {/* Progress circle */}
+              {/* 进度圆 */}
               <circle
                 cx={size / 2}
                 cy={size / 2}
@@ -120,7 +121,7 @@ export function BackToTop({
             </svg>
           )}
           
-          {/* Arrow icon */}
+          {/* 箭头图标 */}
           <ArrowUp className="w-5 h-5 group-hover:-translate-y-0.5 transition-transform" />
         </motion.button>
       )}

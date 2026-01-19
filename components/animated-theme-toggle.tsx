@@ -8,12 +8,12 @@ import { Moon, Sun } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 /**
- * Animation variant types for theme transition
+ * 主题切换的动画变体类型
  */
 export type AnimationVariant = 'circle' | 'rectangle' | 'gif' | 'polygon' | 'circle-blur';
 
 /**
- * Animation start position types
+ * 动画起始位置类型
  */
 export type AnimationStart =
   | 'top-left'
@@ -29,24 +29,24 @@ export type AnimationStart =
   | 'right-left';
 
 interface AnimatedThemeToggleProps {
-  /** Animation variant. Default: 'rectangle' */
+  /** 动画变体。默认：'rectangle' */
   variant?: AnimationVariant;
-  /** Animation start position. Default: 'bottom-up' */
+  /** 动画起始位置。默认：'bottom-up' */
   start?: AnimationStart;
-  /** Enable blur effect. Default: false */
+  /** 启用模糊效果。默认：false */
   blur?: boolean;
-  /** Custom GIF URL for 'gif' variant */
+  /** 'gif' 变体的自定义 GIF 链接 */
   gifUrl?: string;
-  /** Additional className */
+  /** 额外的 className */
   className?: string;
-  /** Button size - width. Default: 56 */
+  /** 按钮尺寸 - 宽度。默认：56 */
   width?: number;
-  /** Button size - height. Default: 32 */
+  /** 按钮尺寸 - 高度。默认：32 */
   height?: number;
 }
 
 /**
- * Custom hook for animated theme toggle with View Transitions API
+ * 使用视图过渡 API 的主题动画切换自定义 Hook
  */
 export function useAnimatedThemeToggle({
   variant = 'rectangle',
@@ -87,7 +87,7 @@ export function useAnimatedThemeToggle({
       setTheme(theme === 'light' ? 'dark' : 'light');
     };
 
-    // Use View Transitions API if available
+    // 如可用则使用视图过渡 API
     if (!document.startViewTransition) {
       switchTheme();
       return;
@@ -100,10 +100,10 @@ export function useAnimatedThemeToggle({
 }
 
 /**
- * Animated Theme Toggle - Smooth Slide Toggle
+ * Animated Theme Toggle - 平滑滑动切换
  * 
- * A beautiful theme toggle button with View Transitions API support
- * and smooth slide animation between light/dark mode.
+ * 支持视图过渡 API 的精美主题切换按钮，
+ * 在明暗模式之间提供平滑滑动动画。
  * 
  * @example
  * ```tsx
@@ -154,7 +154,7 @@ export const AnimatedThemeToggle = memo(function AnimatedThemeToggle({
       style={{ width, height }}
       aria-label="Toggle theme"
     >
-      {/* Background icons */}
+      {/* 背景图标 */}
       <div className="absolute inset-0 flex items-center justify-between px-2">
         <Sun className={cn(
           'w-3.5 h-3.5 transition-opacity duration-300',
@@ -166,7 +166,7 @@ export const AnimatedThemeToggle = memo(function AnimatedThemeToggle({
         )} />
       </div>
 
-      {/* Sliding knob */}
+      {/* 滑动圆钮 */}
       <motion.div
         className={cn(
           'absolute top-1 rounded-full shadow-md flex items-center justify-center',
@@ -195,7 +195,7 @@ export const AnimatedThemeToggle = memo(function AnimatedThemeToggle({
   );
 });
 
-// ========== Animation Utilities ==========
+// ========== 动画工具 ==========
 
 interface Animation {
   name: string;
@@ -284,7 +284,7 @@ export function createAnimation(
   const svg = generateSVG(variant, start);
   const transformOrigin = getTransformOrigin(start);
 
-  // Rectangle variant uses clip-path
+  // 矩形变体使用 clip-path
   if (variant === 'rectangle') {
     const clipPath = getClipPath(start);
     return {
@@ -307,7 +307,7 @@ export function createAnimation(
     };
   }
 
-  // GIF variant
+  // GIF 变体
   if (variant === 'gif' && url) {
     return {
       name: 'gif-transition',
@@ -331,7 +331,7 @@ export function createAnimation(
     };
   }
 
-  // Circle and polygon variants use mask-image
+  // 圆形与多边形变体使用 mask-image
   const blurFilter = blur ? 'filter: blur(4px);' : '';
   
   return {

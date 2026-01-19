@@ -4,28 +4,28 @@ import { useEffect, useState } from 'react';
 import { motion, useScroll, useSpring } from 'framer-motion';
 
 /**
- * ScrollProgress Component
+ * ScrollProgress 组件
  * 
- * A horizontal progress bar at the top of the page that shows scroll progress.
- * Uses Framer Motion for smooth animations.
+ * 位于页面顶部的水平进度条，用于显示滚动进度。
+ * 使用 Framer Motion 实现平滑动画。
  * 
  * @example
  * ```tsx
- * // In your layout or page
+ * // 在你的布局或页面中
  * <ScrollProgress />
  * ```
  */
 
 interface ScrollProgressProps {
-  /** Color of the progress bar. Default: primary gradient */
+  /** 进度条颜色。默认：主色渐变 */
   color?: string;
-  /** Height of the progress bar in pixels. Default: 3 */
+  /** 进度条高度（像素）。默认：3 */
   height?: number;
-  /** Position: 'top' or 'bottom'. Default: 'top' */
+  /** 位置：'top' 或 'bottom'。默认：'top' */
   position?: 'top' | 'bottom';
-  /** Show percentage text. Default: false */
+  /** 显示百分比文本。默认：false */
   showPercentage?: boolean;
-  /** Z-index. Default: 50 */
+  /** 层级 z-index。默认：50 */
   zIndex?: number;
 }
 
