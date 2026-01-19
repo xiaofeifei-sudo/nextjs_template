@@ -1,10 +1,10 @@
 /**
- * String Utilities
- * Common string manipulation functions
+ * 字符串工具
+ * 常用字符串处理函数
  */
 
 /**
- * Capitalize first letter of string
+ * 将字符串首字母大写
  */
 export function capitalize(str: string): string {
   if (!str) return '';
@@ -12,14 +12,14 @@ export function capitalize(str: string): string {
 }
 
 /**
- * Capitalize first letter of each word
+ * 将每个单词的首字母大写
  */
 export function capitalizeWords(str: string): string {
   return str.replace(/\b\w/g, (char) => char.toUpperCase());
 }
 
 /**
- * Convert string to slug
+ * 将字符串转换为 slug
  */
 export function slugify(str: string): string {
   return str
@@ -31,7 +31,7 @@ export function slugify(str: string): string {
 }
 
 /**
- * Truncate string to specified length
+ * 按指定长度截断字符串
  */
 export function truncate(
   str: string,
@@ -43,14 +43,14 @@ export function truncate(
 }
 
 /**
- * Remove accents from string
+ * 移除字符串中的重音符号
  */
 export function removeAccents(str: string): string {
   return str.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
 }
 
 /**
- * Convert string to camelCase
+ * 转换为 camelCase
  */
 export function camelCase(str: string): string {
   return str
@@ -62,7 +62,7 @@ export function camelCase(str: string): string {
 }
 
 /**
- * Convert string to kebab-case
+ * 转换为 kebab-case
  */
 export function kebabCase(str: string): string {
   return str
@@ -72,7 +72,7 @@ export function kebabCase(str: string): string {
 }
 
 /**
- * Convert string to snake_case
+ * 转换为 snake_case
  */
 export function snakeCase(str: string): string {
   return str
@@ -82,7 +82,7 @@ export function snakeCase(str: string): string {
 }
 
 /**
- * Convert string to PascalCase
+ * 转换为 PascalCase
  */
 export function pascalCase(str: string): string {
   return str
@@ -91,7 +91,7 @@ export function pascalCase(str: string): string {
 }
 
 /**
- * Generate random string
+ * 生成随机字符串
  */
 export function randomString(length: number = 8): string {
   const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
@@ -103,7 +103,7 @@ export function randomString(length: number = 8): string {
 }
 
 /**
- * Generate UUID v4
+ * 生成 UUID v4
  */
 export function generateUUID(): string {
   return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, (c) => {
@@ -114,7 +114,7 @@ export function generateUUID(): string {
 }
 
 /**
- * Mask string (e.g., for sensitive data)
+ * 遮掩字符串（用于敏感数据）
  */
 export function maskString(
   str: string,
@@ -130,21 +130,21 @@ export function maskString(
 }
 
 /**
- * Count words in string
+ * 统计字符串中的单词数
  */
 export function wordCount(str: string): number {
   return str.trim().split(/\s+/).filter(Boolean).length;
 }
 
 /**
- * Reverse string
+ * 反转字符串
  */
 export function reverseString(str: string): string {
   return str.split('').reverse().join('');
 }
 
 /**
- * Check if string is palindrome
+ * 检查字符串是否为回文
  */
 export function isPalindrome(str: string): boolean {
   const cleaned = str.toLowerCase().replace(/[^a-z0-9]/g, '');
@@ -152,7 +152,7 @@ export function isPalindrome(str: string): boolean {
 }
 
 /**
- * Extract initials from name
+ * 从姓名中提取首字母缩写
  */
 export function getInitials(name: string, count: number = 2): string {
   return name

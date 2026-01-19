@@ -1,10 +1,10 @@
 /**
- * Storage Utilities
- * LocalStorage and SessionStorage helpers with type safety
+ * 存储工具
+ * 带类型安全的 LocalStorage/SessionStorage 辅助函数
  */
 
 /**
- * Get item from localStorage with type safety
+ * 从 localStorage 获取项（类型安全）
  */
 export function getStorageItem<T>(
   key: string,
@@ -22,7 +22,7 @@ export function getStorageItem<T>(
 }
 
 /**
- * Set item in localStorage with type safety
+ * 设置 localStorage 项（类型安全）
  */
 export function setStorageItem<T>(
   key: string,
@@ -39,7 +39,7 @@ export function setStorageItem<T>(
 }
 
 /**
- * Remove item from localStorage
+ * 从 localStorage 删除项
  */
 export function removeStorageItem(
   key: string,
@@ -50,7 +50,7 @@ export function removeStorageItem(
 }
 
 /**
- * Clear all items from localStorage
+ * 清空 localStorage 所有项
  */
 export function clearStorage(
   storage: Storage = typeof window !== 'undefined' ? localStorage : null!
@@ -60,7 +60,7 @@ export function clearStorage(
 }
 
 /**
- * Check if key exists in localStorage
+ * 检查键是否存在于 localStorage
  */
 export function hasStorageItem(
   key: string,
@@ -71,7 +71,7 @@ export function hasStorageItem(
 }
 
 /**
- * Get all keys from localStorage
+ * 获取 localStorage 的所有键
  */
 export function getStorageKeys(
   storage: Storage = typeof window !== 'undefined' ? localStorage : null!
@@ -81,7 +81,7 @@ export function getStorageKeys(
 }
 
 /**
- * Get storage size in bytes
+ * 获取存储大小（字节）
  */
 export function getStorageSize(
   storage: Storage = typeof window !== 'undefined' ? localStorage : null!
@@ -95,16 +95,16 @@ export function getStorageSize(
       size += key.length + item.length;
     }
   }
-  return size * 2; // UTF-16 = 2 bytes per character
+  return size * 2; // UTF-16 = 每字符 2 字节
 }
 
 /**
- * Set item with expiration
+ * 设置带过期时间的项
  */
 export function setStorageItemWithExpiry<T>(
   key: string,
   value: T,
-  ttl: number, // time to live in milliseconds
+  ttl: number, // 存活时间（毫秒）
   storage: Storage = typeof window !== 'undefined' ? localStorage : null!
 ): void {
   const item = {
@@ -115,7 +115,7 @@ export function setStorageItemWithExpiry<T>(
 }
 
 /**
- * Get item with expiration check
+ * 获取带过期检查的项
  */
 export function getStorageItemWithExpiry<T>(
   key: string,

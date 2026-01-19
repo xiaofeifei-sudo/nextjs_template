@@ -1,10 +1,10 @@
 /**
- * Formatting Utilities
- * Common formatting functions for numbers, currency, dates, etc.
+ * 格式化工具
+ * 常用的数字、货币、日期等格式化函数
  */
 
 /**
- * Format number as currency
+ * 将数字格式化为货币
  */
 export function formatCurrency(
   amount: number,
@@ -20,7 +20,7 @@ export function formatCurrency(
 }
 
 /**
- * Format number with thousand separators
+ * 将数字格式化为千分位
  */
 export function formatNumber(
   value: number,
@@ -30,7 +30,7 @@ export function formatNumber(
 }
 
 /**
- * Format number as percentage
+ * 将数字格式化为百分比
  */
 export function formatPercentage(
   value: number,
@@ -40,7 +40,7 @@ export function formatPercentage(
 }
 
 /**
- * Format bytes to human readable file size
+ * 将字节数格式化为可读的文件大小
  */
 export function formatFileSize(bytes: number): string {
   if (bytes === 0) return '0 Bytes';
@@ -53,7 +53,7 @@ export function formatFileSize(bytes: number): string {
 }
 
 /**
- * Format phone number (Indonesian format)
+ * 格式化电话号码（印尼格式）
  */
 export function formatPhoneNumber(phone: string): string {
   const cleaned = phone.replace(/\D/g, '');
@@ -69,7 +69,7 @@ export function formatPhoneNumber(phone: string): string {
 }
 
 /**
- * Format number with compact notation (1K, 1M, etc.)
+ * 使用紧凑记法格式化数字（如 1K、1M）
  */
 export function formatCompact(
   value: number,
@@ -82,7 +82,7 @@ export function formatCompact(
 }
 
 /**
- * Format duration in milliseconds to readable format
+ * 将毫秒时长格式化为可读文本
  */
 export function formatDuration(ms: number): string {
   const seconds = Math.floor(ms / 1000);

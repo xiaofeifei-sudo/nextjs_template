@@ -1,12 +1,12 @@
 /**
- * Utility Functions - Barrel Export
- * Re-export all utilities from a single entry point
+ * 工具函数 - 统配导出
+ * 从单一入口重新导出全部工具函数
  */
 
-// Class name merger (shadcn)
+// 类名合并工具（shadcn）
 export { cn } from '../utils';
 
-// Formatting utilities
+// 格式化工具
 export {
   formatCurrency,
   formatNumber,
@@ -17,7 +17,7 @@ export {
   formatDuration,
 } from './format';
 
-// Validation utilities
+// 校验工具
 export {
   isEmail,
   isURL,
@@ -30,7 +30,7 @@ export {
   isValidDate,
 } from './validation';
 
-// Date utilities
+// 日期工具
 export {
   formatDate,
   formatRelativeTime,
@@ -45,7 +45,7 @@ export {
   getAge,
 } from './date';
 
-// String utilities
+// 字符串工具
 export {
   capitalize,
   capitalizeWords,
@@ -65,7 +65,7 @@ export {
   getInitials,
 } from './string';
 
-// Array utilities
+// 数组工具
 export {
   chunk,
   unique,
@@ -90,7 +90,7 @@ export {
   max,
 } from './array';
 
-// Object utilities
+// 对象工具
 export {
   pick,
   omit,
@@ -106,7 +106,7 @@ export {
   filterObject,
 } from './object';
 
-// Number utilities
+// 数字工具
 export {
   clamp,
   randomBetween,
@@ -131,7 +131,7 @@ export {
   lcm,
 } from './number';
 
-// Storage utilities
+// 存储工具
 export {
   getStorageItem,
   setStorageItem,
@@ -144,7 +144,7 @@ export {
   getStorageItemWithExpiry,
 } from './storage';
 
-// API utilities
+// API 工具
 export {
   fetcher,
   createApiClient,
@@ -162,7 +162,7 @@ export {
   type ApiResponse,
 } from './api';
 
-// Color utilities
+// 颜色工具
 export {
   hexToRgb,
   rgbToHex,
@@ -178,7 +178,7 @@ export {
   mixColors,
 } from './color';
 
-// DOM utilities
+// DOM 工具
 export {
   scrollToTop,
   scrollToElement,
@@ -197,7 +197,7 @@ export {
   printElement,
 } from './dom';
 
-// Browser detection utilities (New in v1.2)
+// 浏览器检测工具（v1.2 新增）
 export {
   isServer,
   isBrowser,
@@ -219,7 +219,7 @@ export {
   getBatteryLevel,
 } from './browser';
 
-// Async utilities (New in v1.2)
+// 异步工具（v1.2 新增）
 export {
   sleep as delay,
   retry as retryAsync,
@@ -233,7 +233,7 @@ export {
   once,
 } from './async';
 
-// Crypto utilities (New in v1.2)
+// 加密工具（v1.2 新增）
 export {
   uuid,
   nanoid,
@@ -250,7 +250,7 @@ export {
   generateCSRFToken,
 } from './crypto';
 
-// New in v1.4 - Sound utilities
+// v1.4 新增 - 声音工具
 export {
   createSound,
   playSound,

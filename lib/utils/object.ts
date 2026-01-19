@@ -1,10 +1,10 @@
 /**
- * Object Utilities
- * Common object manipulation functions
+ * 对象工具
+ * 常用对象处理函数
  */
 
 /**
- * Pick specific keys from object
+ * 从对象中挑选指定键
  */
 export function pick<T extends object, K extends keyof T>(
   obj: T,
@@ -20,7 +20,7 @@ export function pick<T extends object, K extends keyof T>(
 }
 
 /**
- * Omit specific keys from object
+ * 从对象中省略指定键
  */
 export function omit<T extends object, K extends keyof T>(
   obj: T,
@@ -34,7 +34,7 @@ export function omit<T extends object, K extends keyof T>(
 }
 
 /**
- * Deep clone object
+ * 深拷贝对象
  */
 export function deepClone<T>(obj: T): T {
   if (obj === null || typeof obj !== 'object') return obj;
@@ -53,7 +53,7 @@ export function deepClone<T>(obj: T): T {
 }
 
 /**
- * Deep merge objects
+ * 深度合并对象
  */
 export function deepMerge<T extends object>(...objects: Partial<T>[]): T {
   const result = {} as T;
@@ -87,7 +87,7 @@ export function deepMerge<T extends object>(...objects: Partial<T>[]): T {
 }
 
 /**
- * Check if two values are deeply equal
+ * 检查两个值是否深度相等
  */
 export function isEqual(a: unknown, b: unknown): boolean {
   if (a === b) return true;
@@ -114,14 +114,14 @@ export function isEqual(a: unknown, b: unknown): boolean {
 }
 
 /**
- * Check if object is empty
+ * 检查对象是否为空
  */
 export function isEmptyObject(obj: object): boolean {
   return Object.keys(obj).length === 0;
 }
 
 /**
- * Get nested value from object using dot notation
+ * 使用点号路径获取对象的嵌套值
  */
 export function get<T = unknown>(
   obj: object,
@@ -140,7 +140,7 @@ export function get<T = unknown>(
 }
 
 /**
- * Set nested value in object using dot notation
+ * 使用点号路径设置对象的嵌套值
  */
 export function set<T extends object>(
   obj: T,
@@ -164,7 +164,7 @@ export function set<T extends object>(
 }
 
 /**
- * Flatten nested object to dot notation
+ * 将嵌套对象展平成点号路径的键值
  */
 export function flattenObject(
   obj: object,
@@ -190,7 +190,7 @@ export function flattenObject(
 }
 
 /**
- * Invert object keys and values
+ * 反转对象的键与值
  */
 export function invert<T extends Record<string, string | number>>(
   obj: T
@@ -203,7 +203,7 @@ export function invert<T extends Record<string, string | number>>(
 }
 
 /**
- * Map object values
+ * 映射对象的值
  */
 export function mapValues<T, U>(
   obj: Record<string, T>,
@@ -217,7 +217,7 @@ export function mapValues<T, U>(
 }
 
 /**
- * Filter object by predicate
+ * 按条件过滤对象
  */
 export function filterObject<T>(
   obj: Record<string, T>,

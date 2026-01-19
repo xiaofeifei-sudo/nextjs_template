@@ -1,10 +1,10 @@
 /**
- * Color Utilities
- * Color manipulation and conversion functions
+ * 颜色工具
+ * 颜色处理与转换函数
  */
 
 /**
- * Convert hex color to RGB object
+ * 将十六进制颜色转换为 RGB 对象
  */
 export function hexToRgb(hex: string): { r: number; g: number; b: number } | null {
   const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
@@ -18,7 +18,7 @@ export function hexToRgb(hex: string): { r: number; g: number; b: number } | nul
 }
 
 /**
- * Convert RGB to hex color
+ * 将 RGB 转换为十六进制颜色
  */
 export function rgbToHex(r: number, g: number, b: number): string {
   return (
@@ -33,7 +33,7 @@ export function rgbToHex(r: number, g: number, b: number): string {
 }
 
 /**
- * Convert hex to HSL
+ * 将十六进制颜色转换为 HSL
  */
 export function hexToHsl(
   hex: string
@@ -77,7 +77,7 @@ export function hexToHsl(
 }
 
 /**
- * Convert HSL to hex
+ * 将 HSL 转换为十六进制颜色
  */
 export function hslToHex(h: number, s: number, l: number): string {
   s /= 100;
@@ -125,7 +125,7 @@ export function hslToHex(h: number, s: number, l: number): string {
 }
 
 /**
- * Lighten a hex color by percentage
+ * 按百分比调亮十六进制颜色
  */
 export function lightenColor(hex: string, percent: number): string {
   const hsl = hexToHsl(hex);
@@ -136,7 +136,7 @@ export function lightenColor(hex: string, percent: number): string {
 }
 
 /**
- * Darken a hex color by percentage
+ * 按百分比调暗十六进制颜色
  */
 export function darkenColor(hex: string, percent: number): string {
   const hsl = hexToHsl(hex);
@@ -147,7 +147,7 @@ export function darkenColor(hex: string, percent: number): string {
 }
 
 /**
- * Add alpha to hex color (returns rgba)
+ * 为十六进制颜色添加透明度（返回 rgba）
  */
 export function hexToRgba(hex: string, alpha: number): string {
   const rgb = hexToRgb(hex);
@@ -156,7 +156,7 @@ export function hexToRgba(hex: string, alpha: number): string {
 }
 
 /**
- * Get contrast ratio between two colors
+ * 计算两种颜色的对比度
  */
 export function getContrastRatio(hex1: string, hex2: string): number {
   const rgb1 = hexToRgb(hex1);
@@ -180,33 +180,33 @@ export function getContrastRatio(hex1: string, hex2: string): number {
 }
 
 /**
- * Check if color is light or dark
+ * 判断颜色偏亮或偏暗
  */
 export function isLightColor(hex: string): boolean {
   const rgb = hexToRgb(hex);
   if (!rgb) return true;
 
-  // Using YIQ formula
+  // 使用 YIQ 公式
   const yiq = (rgb.r * 299 + rgb.g * 587 + rgb.b * 114) / 1000;
   return yiq >= 128;
 }
 
 /**
- * Get text color (black or white) for given background
+ * 为给定背景选择合适的文本颜色（黑或白）
  */
 export function getTextColorForBg(bgHex: string): string {
   return isLightColor(bgHex) ? '#000000' : '#ffffff';
 }
 
 /**
- * Generate random hex color
+ * 生成随机十六进制颜色
  */
 export function randomColor(): string {
   return '#' + Math.floor(Math.random() * 16777215).toString(16).padStart(6, '0');
 }
 
 /**
- * Mix two colors together
+ * 混合两种颜色
  */
 export function mixColors(
   hex1: string,

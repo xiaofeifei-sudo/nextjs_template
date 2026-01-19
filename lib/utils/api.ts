@@ -1,6 +1,6 @@
 /**
- * API Utilities
- * HTTP client helpers and error handling
+ * API 工具
+ * HTTP 客户端辅助函数与错误处理
  */
 
 import axios, {
@@ -11,7 +11,7 @@ import axios, {
 } from 'axios';
 
 /**
- * API Error type
+ * API 错误类型
  */
 export interface ApiError {
   message: string;
@@ -21,7 +21,7 @@ export interface ApiError {
 }
 
 /**
- * API Response wrapper type
+ * API 响应包装类型
  */
 export interface ApiResponse<T> {
   data: T;
@@ -36,7 +36,7 @@ export interface ApiResponse<T> {
 }
 
 /**
- * Simple fetcher for SWR/React Query
+ * 用于 SWR/React Query 的简单数据获取器
  */
 export async function fetcher<T>(url: string): Promise<T> {
   const response = await fetch(url);
@@ -53,7 +53,7 @@ export async function fetcher<T>(url: string): Promise<T> {
 }
 
 /**
- * Create axios instance with default config
+ * 创建带默认配置的 axios 实例
  */
 export function createApiClient(baseURL: string = '/api'): AxiosInstance {
   const client = axios.create({
@@ -64,10 +64,10 @@ export function createApiClient(baseURL: string = '/api'): AxiosInstance {
     },
   });
 
-  // Request interceptor
+  // 请求拦截器
   client.interceptors.request.use(
     (config) => {
-      // Add auth token if available
+      // 如有可用的认证令牌则添加
       if (typeof window !== 'undefined') {
         const token = localStorage.getItem('token');
         if (token) {
@@ -79,7 +79,7 @@ export function createApiClient(baseURL: string = '/api'): AxiosInstance {
     (error) => Promise.reject(error)
   );
 
-  // Response interceptor
+  // 响应拦截器
   client.interceptors.response.use(
     (response) => response,
     (error: AxiosError) => {
@@ -91,12 +91,12 @@ export function createApiClient(baseURL: string = '/api'): AxiosInstance {
 }
 
 /**
- * Default API client instance
+ * 默认 API 客户端实例
  */
 export const apiClient = createApiClient();
 
 /**
- * Handle API error and return standardized error object
+ * 处理 API 错误并返回标准化错误对象
  */
 export function handleApiError(error: unknown): ApiError {
   if (axios.isAxiosError(error)) {
@@ -126,7 +126,7 @@ export function handleApiError(error: unknown): ApiError {
 }
 
 /**
- * Generic GET request
+ * 通用 GET 请求
  */
 export async function get<T>(
   url: string,
@@ -137,7 +137,7 @@ export async function get<T>(
 }
 
 /**
- * Generic POST request
+ * 通用 POST 请求
  */
 export async function post<T, D = unknown>(
   url: string,
@@ -149,7 +149,7 @@ export async function post<T, D = unknown>(
 }
 
 /**
- * Generic PUT request
+ * 通用 PUT 请求
  */
 export async function put<T, D = unknown>(
   url: string,
@@ -161,7 +161,7 @@ export async function put<T, D = unknown>(
 }
 
 /**
- * Generic PATCH request
+ * 通用 PATCH 请求
  */
 export async function patch<T, D = unknown>(
   url: string,
@@ -173,7 +173,7 @@ export async function patch<T, D = unknown>(
 }
 
 /**
- * Generic DELETE request
+ * 通用 DELETE 请求
  */
 export async function del<T>(
   url: string,
@@ -184,7 +184,7 @@ export async function del<T>(
 }
 
 /**
- * Build query string from params object
+ * 根据参数对象构建查询字符串
  */
 export function buildQueryString(
   params: Record<string, string | number | boolean | undefined | null>
@@ -202,14 +202,14 @@ export function buildQueryString(
 }
 
 /**
- * Sleep/delay function
+ * 休眠/延迟函数
  */
 export function sleep(ms: number): Promise<void> {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
 /**
- * Retry failed request
+ * 重试失败请求
  */
 export async function retry<T>(
   fn: () => Promise<T>,

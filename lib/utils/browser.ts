@@ -1,20 +1,20 @@
 /**
- * Browser & Device Utilities
- * Helpers for detecting browser features and device capabilities
+ * 浏览器与设备工具
+ * 用于检测浏览器特性与设备能力的辅助函数
  */
 
 /**
- * Check if code is running on the server (SSR)
+ * 检查代码是否在服务端运行（SSR）
  */
 export const isServer = typeof window === 'undefined';
 
 /**
- * Check if code is running in the browser
+ * 检查代码是否在浏览器中运行
  */
 export const isBrowser = typeof window !== 'undefined';
 
 /**
- * Check if device is mobile (user agent based)
+ * 检查设备是否为移动端（基于 UA）
  */
 export function isMobile(): boolean {
   if (isServer) return false;
@@ -24,7 +24,7 @@ export function isMobile(): boolean {
 }
 
 /**
- * Check if device is iOS
+ * 检查设备是否为 iOS
  */
 export function isIOS(): boolean {
   if (isServer) return false;
@@ -32,7 +32,7 @@ export function isIOS(): boolean {
 }
 
 /**
- * Check if device is Android
+ * 检查设备是否为 Android
  */
 export function isAndroid(): boolean {
   if (isServer) return false;
@@ -40,7 +40,7 @@ export function isAndroid(): boolean {
 }
 
 /**
- * Check if device supports touch
+ * 检查设备是否支持触控
  */
 export function isTouchDevice(): boolean {
   if (isServer) return false;
@@ -48,7 +48,7 @@ export function isTouchDevice(): boolean {
 }
 
 /**
- * Check if browser is Safari
+ * 检查浏览器是否为 Safari
  */
 export function isSafari(): boolean {
   if (isServer) return false;
@@ -56,7 +56,7 @@ export function isSafari(): boolean {
 }
 
 /**
- * Check if browser is Chrome
+ * 检查浏览器是否为 Chrome
  */
 export function isChrome(): boolean {
   if (isServer) return false;
@@ -64,7 +64,7 @@ export function isChrome(): boolean {
 }
 
 /**
- * Check if browser is Firefox
+ * 检查浏览器是否为 Firefox
  */
 export function isFirefox(): boolean {
   if (isServer) return false;
@@ -72,7 +72,7 @@ export function isFirefox(): boolean {
 }
 
 /**
- * Check if device prefers reduced motion
+ * 检查设备是否偏好减少动画
  */
 export function prefersReducedMotion(): boolean {
   if (isServer) return false;
@@ -80,7 +80,7 @@ export function prefersReducedMotion(): boolean {
 }
 
 /**
- * Check if device prefers dark mode
+ * 检查设备是否偏好暗色模式
  */
 export function prefersDarkMode(): boolean {
   if (isServer) return false;
@@ -88,7 +88,7 @@ export function prefersDarkMode(): boolean {
 }
 
 /**
- * Get device pixel ratio
+ * 获取设备像素比
  */
 export function getDevicePixelRatio(): number {
   if (isServer) return 1;
@@ -96,7 +96,7 @@ export function getDevicePixelRatio(): number {
 }
 
 /**
- * Check if browser supports WebGL
+ * 检查浏览器是否支持 WebGL
  */
 export function supportsWebGL(): boolean {
   if (isServer) return false;
@@ -112,7 +112,7 @@ export function supportsWebGL(): boolean {
 }
 
 /**
- * Check if browser supports WebP images
+ * 检查浏览器是否支持 WebP 图片
  */
 export async function supportsWebP(): Promise<boolean> {
   if (isServer) return false;
@@ -126,7 +126,7 @@ export async function supportsWebP(): Promise<boolean> {
 }
 
 /**
- * Check if browser supports Intersection Observer
+ * 检查浏览器是否支持 Intersection Observer
  */
 export function supportsIntersectionObserver(): boolean {
   if (isServer) return false;
@@ -134,7 +134,7 @@ export function supportsIntersectionObserver(): boolean {
 }
 
 /**
- * Get network connection type (if available)
+ * 获取网络连接类型（如可用）
  */
 export function getConnectionType(): string | null {
   if (isServer) return null;
@@ -145,7 +145,7 @@ export function getConnectionType(): string | null {
 }
 
 /**
- * Check if online
+ * 检查是否在线
  */
 export function isOnline(): boolean {
   if (isServer) return true;
@@ -153,7 +153,7 @@ export function isOnline(): boolean {
 }
 
 /**
- * Get battery level (if supported)
+ * 获取电池电量（如支持）
  */
 export async function getBatteryLevel(): Promise<number | null> {
   if (isServer) return null;

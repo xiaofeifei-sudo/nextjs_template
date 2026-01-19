@@ -1,31 +1,31 @@
 /**
- * Sound Utilities
+ * 声音工具
  * 
- * Core utilities for playing sounds in the browser.
- * Includes Web Audio API support for synthetic sounds and HTMLAudioElement for files.
+ * 在浏览器中播放声音的核心工具函数。
+ * 支持使用 Web Audio API 合成音效，以及使用 HTMLAudioElement 播放音频文件。
  * 
  * @example
  * ```ts
- * // Play a sound file
+ * // 播放声音文件
  * playSound('/sounds/click.mp3', 0.5);
  * 
- * // Create and reuse a sound
+ * // 创建并复用声音
  * const hoverSound = createSound('/sounds/hover.mp3');
  * hoverSound.play();
  * 
- * // Use SoundManager for centralized control
+ * // 使用 SoundManager 进行集中管理
  * SoundManager.play('click');
  * ```
  */
 
-// Check if we're in browser environment
+// 检查是否处于浏览器环境
 const isBrowser = typeof window !== 'undefined';
 
 /**
- * Create an HTMLAudioElement for a sound file
- * @param src - Path to the audio file
- * @param volume - Volume level (0-1)
- * @returns HTMLAudioElement or null if not in browser
+ * 为音频文件创建 HTMLAudioElement
+ * @param src - 音频文件路径
+ * @param volume - 音量等级（0-1）
+ * @returns HTMLAudioElement；非浏览器环境返回 null
  */
 export function createSound(src: string, volume: number = 1): HTMLAudioElement | null {
   if (!isBrowser) return null;
@@ -38,10 +38,10 @@ export function createSound(src: string, volume: number = 1): HTMLAudioElement |
 }
 
 /**
- * Play a sound once (creates new Audio element each time)
- * Best for one-shot sounds, not recommended for rapid playback
- * @param src - Path to the audio file
- * @param volume - Volume level (0-1)
+ * 播放一次声音（每次创建新的 Audio 元素）
+ * 适用于一次性音效，不推荐用于快速连续播放
+ * @param src - 音频文件路径
+ * @param volume - 音量等级（0-1）
  */
 export function playSound(src: string, volume: number = 1): void {
   if (!isBrowser) return;
@@ -50,17 +50,17 @@ export function playSound(src: string, volume: number = 1): void {
     const audio = new Audio(src);
     audio.volume = Math.max(0, Math.min(1, volume));
     audio.play().catch(() => {
-      // Silently fail if autoplay is blocked
+      // 若自动播放被阻止则静默失败
     });
   } catch {
-    // Silently fail
+    // 静默失败
   }
 }
 
 /**
- * Preload multiple sound files for faster playback
- * @param sources - Array of audio file paths
- * @returns Map of source to HTMLAudioElement
+ * 预加载多个音频文件以加快播放
+ * @param sources - 音频文件路径数组
+ * @returns 源到 HTMLAudioElement 的映射
  */
 export function preloadSounds(sources: string[]): Map<string, HTMLAudioElement> {
   const sounds = new Map<string, HTMLAudioElement>();
@@ -78,8 +78,8 @@ export function preloadSounds(sources: string[]): Map<string, HTMLAudioElement> 
 }
 
 /**
- * Generate a synthetic sound using Web Audio API
- * Perfect for UI feedback sounds without needing audio files
+ * 使用 Web Audio API 生成合成音效
+ * 适用于无需音频文件的 UI 反馈音效
  */
 export class SynthSound {
   private audioContext: AudioContext | null = null;
@@ -94,8 +94,8 @@ export class SynthSound {
   }
   
   /**
-   * Play a click/tap sound
-   * Short, crisp sound for button clicks
+   * 播放点击/轻触音效
+   * 用于按钮点击的短促清脆音效
    */
   playClick(volume: number = 0.3): void {
     const ctx = this.getContext();
@@ -118,8 +118,8 @@ export class SynthSound {
   }
   
   /**
-   * Play a hover sound
-   * Subtle, soft sound for hover feedback
+   * 播放悬停音效
+   * 用于悬停反馈的轻柔音效
    */
   playHover(volume: number = 0.15): void {
     const ctx = this.getContext();
@@ -143,14 +143,14 @@ export class SynthSound {
   }
   
   /**
-   * Play a success sound
-   * Pleasing ascending tone for success feedback
+   * 播放成功音效
+   * 用于成功反馈的悦耳上行音调
    */
   playSuccess(volume: number = 0.3): void {
     const ctx = this.getContext();
     if (!ctx) return;
     
-    // Two quick ascending notes
+    // 两个快速上行音符
     [0, 0.1].forEach((delay, i) => {
       const oscillator = ctx.createOscillator();
       const gainNode = ctx.createGain();
@@ -158,7 +158,7 @@ export class SynthSound {
       oscillator.connect(gainNode);
       gainNode.connect(ctx.destination);
       
-      const freq = i === 0 ? 523.25 : 659.25; // C5 and E5
+      const freq = i === 0 ? 523.25 : 659.25; // C5 与 E5
       oscillator.frequency.setValueAtTime(freq, ctx.currentTime + delay);
       
       gainNode.gain.setValueAtTime(volume, ctx.currentTime + delay);
@@ -170,8 +170,8 @@ export class SynthSound {
   }
   
   /**
-   * Play an error sound
-   * Low buzz for error feedback
+   * 播放错误音效
+   * 用于错误反馈的低沉嗡鸣
    */
   playError(volume: number = 0.3): void {
     const ctx = this.getContext();
@@ -194,24 +194,24 @@ export class SynthSound {
   }
 }
 
-// Singleton instance for easy access
+// 单例实例，便于访问
 export const synth = new SynthSound();
 
 /**
- * SoundManager - Centralized sound management
+ * SoundManager - 集中式声音管理
  * 
  * @example
  * ```ts
- * // Initialize with sounds
+ * // 使用声音文件进行初始化
  * SoundManager.init({
  *   click: '/sounds/click.mp3',
  *   hover: '/sounds/hover.mp3'
  * });
  * 
- * // Play a sound
+ * // 播放命名声音
  * SoundManager.play('click');
  * 
- * // Use synthetic sounds (no files needed)
+ * // 使用合成音效（无需音频文件）
  * SoundManager.synth.playClick();
  * ```
  */
@@ -220,12 +220,12 @@ class SoundManagerClass {
   private enabled: boolean = true;
   private globalVolume: number = 1;
   
-  /** Synthetic sound generator */
+  /** 合成音效生成器 */
   public synth = synth;
   
   /**
-   * Initialize the sound manager with sound files
-   * @param soundMap - Object mapping names to file paths
+   * 使用声音文件初始化管理器
+   * @param soundMap - 名称到文件路径的映射对象
    */
   init(soundMap: Record<string, string>): void {
     if (!isBrowser) return;
@@ -239,16 +239,16 @@ class SoundManagerClass {
   }
   
   /**
-   * Play a named sound
-   * @param name - Name of the sound (from init)
-   * @param volume - Optional volume override (0-1)
+   * 播放命名声音
+   * @param name - 声音名称（来自 init）
+   * @param volume - 可选的音量覆盖（0-1）
    */
   play(name: string, volume?: number): void {
     if (!this.enabled || !isBrowser) return;
     
     const audio = this.sounds.get(name);
     if (audio) {
-      // Clone the audio to allow overlapping playback
+      // 克隆音频以允许重叠播放
       const clone = audio.cloneNode() as HTMLAudioElement;
       clone.volume = volume ?? audio.volume;
       clone.play().catch(() => {});
@@ -256,22 +256,22 @@ class SoundManagerClass {
   }
   
   /**
-   * Enable or disable all sounds
+   * 启用或禁用所有声音
    */
   setEnabled(enabled: boolean): void {
     this.enabled = enabled;
   }
   
   /**
-   * Check if sounds are enabled
+   * 检查声音是否启用
    */
   isEnabled(): boolean {
     return this.enabled;
   }
   
   /**
-   * Set global volume for all sounds
-   * @param volume - Volume level (0-1)
+   * 设置全局音量
+   * @param volume - 音量等级（0-1）
    */
   setVolume(volume: number): void {
     this.globalVolume = Math.max(0, Math.min(1, volume));
@@ -281,7 +281,7 @@ class SoundManagerClass {
   }
   
   /**
-   * Get current global volume
+   * 获取当前全局音量
    */
   getVolume(): number {
     return this.globalVolume;

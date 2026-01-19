@@ -1,10 +1,10 @@
 /**
- * Validation Utilities
- * Common validation functions for forms and data
+ * 校验工具
+ * 表单与数据的常用校验函数
  */
 
 /**
- * Check if string is a valid email
+ * 检查字符串是否为有效邮箱
  */
 export function isEmail(email: string): boolean {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -12,7 +12,7 @@ export function isEmail(email: string): boolean {
 }
 
 /**
- * Check if string is a valid URL
+ * 检查字符串是否为有效 URL
  */
 export function isURL(url: string): boolean {
   try {
@@ -24,7 +24,7 @@ export function isURL(url: string): boolean {
 }
 
 /**
- * Check if string is a valid phone number
+ * 检查字符串是否为有效电话号码
  */
 export function isPhone(phone: string): boolean {
   const phoneRegex = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/;
@@ -32,7 +32,7 @@ export function isPhone(phone: string): boolean {
 }
 
 /**
- * Check if value is empty (null, undefined, empty string, empty array, empty object)
+ * 检查值是否为空（null、undefined、空字符串、空数组、空对象）
  */
 export function isEmpty(value: unknown): boolean {
   if (value === null || value === undefined) return true;
@@ -43,14 +43,14 @@ export function isEmpty(value: unknown): boolean {
 }
 
 /**
- * Check if string contains only numbers
+ * 检查字符串是否仅包含数字
  */
 export function isNumeric(value: string): boolean {
   return /^\d+$/.test(value);
 }
 
 /**
- * Validate password strength
+ * 校验密码强度
  */
 export function validatePassword(password: string): {
   isValid: boolean;
@@ -102,14 +102,14 @@ export function validatePassword(password: string): {
 }
 
 /**
- * Check if string is a valid Indonesian NIK (16 digits)
+ * 检查字符串是否为有效印尼 NIK（16 位数字）
  */
 export function isNIK(nik: string): boolean {
   return /^\d{16}$/.test(nik);
 }
 
 /**
- * Check if string is a valid Indonesian NPWP
+ * 检查字符串是否为有效印尼 NPWP
  */
 export function isNPWP(npwp: string): boolean {
   const cleaned = npwp.replace(/[.\-]/g, '');
@@ -117,7 +117,7 @@ export function isNPWP(npwp: string): boolean {
 }
 
 /**
- * Check if value is a valid date
+ * 检查值是否为有效日期
  */
 export function isValidDate(date: unknown): boolean {
   if (date instanceof Date) return !isNaN(date.getTime());

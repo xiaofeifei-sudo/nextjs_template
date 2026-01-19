@@ -1,10 +1,10 @@
 /**
- * Date Utilities
- * Common date manipulation and formatting functions
+ * 日期工具
+ * 常用日期处理与格式化函数
  */
 
 /**
- * Format date to locale string
+ * 将日期格式化为本地化字符串
  */
 export function formatDate(
   date: Date | string | number,
@@ -19,7 +19,7 @@ export function formatDate(
 }
 
 /**
- * Format date to relative time (e.g., "2 hours ago")
+ * 将日期格式化为相对时间（例如：“2 小时前”）
  */
 export function formatRelativeTime(date: Date | string | number): string {
   const now = new Date();
@@ -48,7 +48,7 @@ export function formatRelativeTime(date: Date | string | number): string {
 }
 
 /**
- * Check if date is today
+ * 检查日期是否为今天
  */
 export function isToday(date: Date | string | number): boolean {
   const today = new Date();
@@ -61,7 +61,7 @@ export function isToday(date: Date | string | number): boolean {
 }
 
 /**
- * Check if date is yesterday
+ * 检查日期是否为昨天
  */
 export function isYesterday(date: Date | string | number): boolean {
   const yesterday = new Date();
@@ -75,7 +75,7 @@ export function isYesterday(date: Date | string | number): boolean {
 }
 
 /**
- * Get number of days between two dates
+ * 获取两个日期之间的天数
  */
 export function daysBetween(
   date1: Date | string | number,
@@ -88,7 +88,7 @@ export function daysBetween(
 }
 
 /**
- * Add days to a date
+ * 为日期增加天数
  */
 export function addDays(date: Date | string | number, days: number): Date {
   const result = new Date(date);
@@ -97,7 +97,7 @@ export function addDays(date: Date | string | number, days: number): Date {
 }
 
 /**
- * Add months to a date
+ * 为日期增加月份
  */
 export function addMonths(date: Date | string | number, months: number): Date {
   const result = new Date(date);
@@ -106,7 +106,7 @@ export function addMonths(date: Date | string | number, months: number): Date {
 }
 
 /**
- * Get start of day
+ * 获取当天开始时间
  */
 export function startOfDay(date: Date | string | number): Date {
   const result = new Date(date);
@@ -115,7 +115,7 @@ export function startOfDay(date: Date | string | number): Date {
 }
 
 /**
- * Get end of day
+ * 获取当天结束时间
  */
 export function endOfDay(date: Date | string | number): Date {
   const result = new Date(date);
@@ -124,7 +124,7 @@ export function endOfDay(date: Date | string | number): Date {
 }
 
 /**
- * Format date to ISO string without timezone
+ * 将日期格式化为不含时区的 ISO 字符串
  */
 export function toISODateString(date: Date | string | number): string {
   const d = new Date(date);
@@ -132,7 +132,7 @@ export function toISODateString(date: Date | string | number): string {
 }
 
 /**
- * Get age from birth date
+ * 根据出生日期计算年龄
  */
 export function getAge(birthDate: Date | string | number): number {
   const today = new Date();

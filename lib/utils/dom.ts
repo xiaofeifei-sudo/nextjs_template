@@ -1,10 +1,10 @@
 /**
- * DOM Utilities
- * Browser and DOM manipulation helpers
+ * DOM 工具
+ * 浏览器与 DOM 操作辅助函数
  */
 
 /**
- * Scroll to top of page
+ * 滚动至页面顶部
  */
 export function scrollToTop(smooth: boolean = true): void {
   if (typeof window === 'undefined') return;
@@ -15,7 +15,7 @@ export function scrollToTop(smooth: boolean = true): void {
 }
 
 /**
- * Scroll to element by ID or element reference
+ * 通过 ID 或元素引用滚动至目标元素
  */
 export function scrollToElement(
   target: string | HTMLElement,
@@ -50,7 +50,7 @@ export function scrollToElement(
 }
 
 /**
- * Copy text to clipboard
+ * 复制文本到剪贴板
  */
 export async function copyToClipboard(text: string): Promise<boolean> {
   if (typeof window === 'undefined') return false;
@@ -61,7 +61,7 @@ export async function copyToClipboard(text: string): Promise<boolean> {
       return true;
     }
 
-    // Fallback for older browsers
+    // 旧版浏览器回退方案
     const textArea = document.createElement('textarea');
     textArea.value = text;
     textArea.style.position = 'fixed';
@@ -80,7 +80,7 @@ export async function copyToClipboard(text: string): Promise<boolean> {
 }
 
 /**
- * Download file from URL or blob
+ * 从 URL 或 Blob 下载文件
  */
 export function downloadFile(
   content: string | Blob,
@@ -105,7 +105,7 @@ export function downloadFile(
 }
 
 /**
- * Download file from URL
+ * 从 URL 下载文件
  */
 export async function downloadFromUrl(
   url: string,
@@ -123,7 +123,7 @@ export async function downloadFromUrl(
 }
 
 /**
- * Check if element is in viewport
+ * 检查元素是否在视口内
  */
 export function isInViewport(
   element: HTMLElement,
@@ -143,7 +143,7 @@ export function isInViewport(
 }
 
 /**
- * Get element's offset from top of document
+ * 获取元素相对文档顶部的偏移量
  */
 export function getOffsetTop(element: HTMLElement): number {
   let offset = 0;
@@ -158,7 +158,7 @@ export function getOffsetTop(element: HTMLElement): number {
 }
 
 /**
- * Lock body scroll
+ * 锁定页面滚动
  */
 export function lockBodyScroll(): void {
   if (typeof window === 'undefined') return;
@@ -167,7 +167,7 @@ export function lockBodyScroll(): void {
 }
 
 /**
- * Unlock body scroll
+ * 解锁页面滚动
  */
 export function unlockBodyScroll(): void {
   if (typeof window === 'undefined') return;
@@ -176,7 +176,7 @@ export function unlockBodyScroll(): void {
 }
 
 /**
- * Get current scroll percentage
+ * 获取当前滚动百分比
  */
 export function getScrollPercentage(): number {
   if (typeof window === 'undefined') return 0;
@@ -190,7 +190,7 @@ export function getScrollPercentage(): number {
 }
 
 /**
- * Check if device is mobile
+ * 检查设备是否为移动端
  */
 export function isMobile(): boolean {
   if (typeof window === 'undefined') return false;
@@ -200,7 +200,7 @@ export function isMobile(): boolean {
 }
 
 /**
- * Check if device is touch enabled
+ * 检查设备是否支持触控
  */
 export function isTouchDevice(): boolean {
   if (typeof window === 'undefined') return false;
@@ -208,7 +208,7 @@ export function isTouchDevice(): boolean {
 }
 
 /**
- * Get preferred color scheme
+ * 获取首选配色方案
  */
 export function getPreferredColorScheme(): 'light' | 'dark' {
   if (typeof window === 'undefined') return 'light';
@@ -218,7 +218,7 @@ export function getPreferredColorScheme(): 'light' | 'dark' {
 }
 
 /**
- * Focus trap inside element
+ * 在容器内创建焦点陷阱
  */
 export function createFocusTrap(container: HTMLElement): () => void {
   const focusableElements = container.querySelectorAll<HTMLElement>(
@@ -262,7 +262,7 @@ export function printElement(element: HTMLElement): void {
 
   printWindow.document.write('<html><head><title>Print</title>');
   
-  // Copy styles
+  // 复制样式
   const styles = document.querySelectorAll('style, link[rel="stylesheet"]');
   styles.forEach((style) => {
     printWindow.document.write(style.outerHTML);

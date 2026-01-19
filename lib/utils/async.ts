@@ -1,19 +1,19 @@
 /**
- * Async & Promise Utilities
- * Helpers for working with async operations
+ * 异步与 Promise 工具
+ * 处理异步操作的辅助函数
  */
 
 /**
- * Sleep/delay for specified milliseconds
+ * 休眠/延迟指定毫秒
  * @example
- * await sleep(1000); // Wait 1 second
+ * await sleep(1000); // 等待 1 秒
  */
 export function sleep(ms: number): Promise<void> {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
 /**
- * Retry a function with exponential backoff
+ * 使用指数退避重试函数
  * @example
  * const data = await retry(() => fetchData(), { attempts: 3, delay: 1000 });
  */
@@ -40,7 +40,7 @@ export async function retry<T>(
 }
 
 /**
- * Create a timeout wrapper for a promise
+ * 为 Promise 创建超时包装
  * @example
  * const data = await withTimeout(fetchData(), 5000);
  */
@@ -56,7 +56,7 @@ export async function withTimeout<T>(
 }
 
 /**
- * Execute promises in parallel with a concurrency limit
+ * 并行执行 Promise，并限制并发数
  * @example
  * const results = await parallelLimit(urls.map(url => () => fetch(url)), 5);
  */
@@ -89,7 +89,7 @@ export async function parallelLimit<T>(
 }
 
 /**
- * Debounce a function
+ * 防抖函数
  * @example
  * const debouncedSearch = debounce(search, 300);
  */
@@ -106,7 +106,7 @@ export function debounce<T extends (...args: Parameters<T>) => ReturnType<T>>(
 }
 
 /**
- * Throttle a function
+ * 节流函数
  * @example
  * const throttledScroll = throttle(handleScroll, 100);
  */
@@ -126,7 +126,7 @@ export function throttle<T extends (...args: Parameters<T>) => ReturnType<T>>(
 }
 
 /**
- * Memoize a function with cache
+ * 通过缓存为函数记忆化
  * @example
  * const memoizedCalc = memoize(expensiveCalculation);
  */
@@ -150,7 +150,7 @@ export function memoize<T extends (...args: Parameters<T>) => ReturnType<T>>(
 }
 
 /**
- * Create a deferred promise (manually resolvable)
+ * 创建可手动解析的延迟 Promise
  * @example
  * const deferred = createDeferred<string>();
  * deferred.resolve('done');
@@ -168,7 +168,7 @@ export function createDeferred<T>() {
 }
 
 /**
- * Poll a function until condition is met
+ * 轮询函数直至满足条件
  * @example
  * await poll(() => checkStatus(), status => status === 'complete', 1000);
  */
@@ -191,7 +191,7 @@ export async function poll<T>(
 }
 
 /**
- * Execute a function once and cache result
+ * 函数仅执行一次并缓存结果
  * @example
  * const getConfig = once(() => loadConfig());
  */

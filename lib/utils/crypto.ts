@@ -1,10 +1,10 @@
 /**
- * Crypto & Security Utilities
- * Helpers for hashing, encryption, and security
+ * 加密与安全工具
+ * 用于哈希、加密与安全相关的辅助函数
  */
 
 /**
- * Generate a UUID v4
+ * 生成 UUID v4
  * @example
  * const id = uuid(); // "550e8400-e29b-41d4-a716-446655440000"
  */
@@ -17,7 +17,7 @@ export function uuid(): string {
 }
 
 /**
- * Generate a nanoid-style short unique ID
+ * 生成 nanoid 风格的短唯一 ID
  * @example
  * const id = nanoid(); // "V1StGXR8_Z5jdHi6B-myT"
  */
@@ -32,7 +32,7 @@ export function nanoid(size = 21): string {
 }
 
 /**
- * Generate a random string
+ * 生成随机字符串
  * @example
  * const token = randomString(32); // "a1b2c3d4..."
  */
@@ -43,7 +43,7 @@ export function randomString(length: number, charset?: string): string {
 }
 
 /**
- * Hash a string using SHA-256
+ * 使用 SHA-256 对字符串进行哈希
  * @example
  * const hash = await sha256('password'); // "5e884898..."
  */
@@ -55,7 +55,7 @@ export async function sha256(message: string): Promise<string> {
 }
 
 /**
- * Hash a string using SHA-512
+ * 使用 SHA-512 对字符串进行哈希
  */
 export async function sha512(message: string): Promise<string> {
   const msgBuffer = new TextEncoder().encode(message);
@@ -65,7 +65,7 @@ export async function sha512(message: string): Promise<string> {
 }
 
 /**
- * Base64 encode a string
+ * 将字符串进行 Base64 编码
  * @example
  * const encoded = base64Encode('hello'); // "aGVsbG8="
  */
@@ -77,7 +77,7 @@ export function base64Encode(str: string): string {
 }
 
 /**
- * Base64 decode a string
+ * 将 Base64 字符串解码
  * @example
  * const decoded = base64Decode('aGVsbG8='); // "hello"
  */
@@ -89,7 +89,7 @@ export function base64Decode(str: string): string {
 }
 
 /**
- * Generate a secure random token
+ * 生成安全的随机令牌
  * @example
  * const token = generateToken(32); // "a3f8b2c1..."
  */
@@ -100,8 +100,8 @@ export function generateToken(length: number): string {
 }
 
 /**
- * Simple XOR encryption (NOT for production security!)
- * For demo/obfuscation purposes only
+ * 简单的 XOR 加密（不适用于生产环境安全！）
+ * 仅用于演示与混淆目的
  */
 export function xorEncrypt(text: string, key: string): string {
   return Array.from(text)
@@ -112,8 +112,8 @@ export function xorEncrypt(text: string, key: string): string {
 }
 
 /**
- * Compare two strings in constant time (timing-safe)
- * Prevents timing attacks on string comparison
+ * 以恒定时间比较两个字符串（计时安全）
+ * 防止字符串比较中的计时攻击
  */
 export function timingSafeEqual(a: string, b: string): boolean {
   if (a.length !== b.length) return false;
@@ -126,7 +126,7 @@ export function timingSafeEqual(a: string, b: string): boolean {
 }
 
 /**
- * Mask sensitive data (like credit cards, emails)
+ * 遮掩敏感数据（如信用卡、邮箱）
  * @example
  * maskString('4111111111111111', 4, 4); // "4111********1111"
  * maskEmail('john@example.com'); // "j***@example.com"
@@ -152,7 +152,7 @@ export function maskEmail(email: string): string {
 }
 
 /**
- * Generate a CSRF token
+ * 生成 CSRF 令牌
  */
 export function generateCSRFToken(): string {
   return generateToken(32);
