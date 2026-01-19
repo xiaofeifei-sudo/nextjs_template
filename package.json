@@ -10,7 +10,9 @@
     "build:static": "./scripts/build-static.sh",
     "serve:static": "./scripts/serve-static.sh",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "chromatic": "chromatic --exit-once-uploaded",
+    "test:visual": "chromatic --only-changed"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
@@ -53,6 +55,7 @@
     "next": "16.0.10",
     "next-intl": "^4.6.1",
     "next-themes": "^0.4.6",
+    "radash": "^12.1.1",
     "react": "19.2.3",
     "react-day-picker": "^9.13.0",
     "react-dom": "19.2.3",
