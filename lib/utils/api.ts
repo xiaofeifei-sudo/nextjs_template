@@ -9,6 +9,7 @@ import axios, {
   AxiosRequestConfig,
   AxiosResponse,
 } from 'axios';
+import { API_BASE_URL } from '@/constants';
 
 /**
  * API 错误类型
@@ -55,7 +56,7 @@ export async function fetcher<T>(url: string): Promise<T> {
 /**
  * 创建带默认配置的 axios 实例
  */
-export function createApiClient(baseURL: string = '/api'): AxiosInstance {
+export function createApiClient(baseURL: string = API_BASE_URL): AxiosInstance {
   const client = axios.create({
     baseURL,
     timeout: 30000,
