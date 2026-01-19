@@ -3,7 +3,11 @@ import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from '.
 export default {
   title: 'Components/Select',
   component: SelectTrigger,
-  parameters: { nextjs: { appDirectory: true } },
+  parameters: { 
+    nextjs: { appDirectory: true },
+    docs: { description: { component: '下拉选择器，触发器与内容分离，可设置标签、分组、分隔线。' } },
+  },
+  tags: ['autodocs'],
 }
 
 export const Default = {
@@ -20,4 +24,3 @@ export const Default = {
     </Select>
   ),
 }
-

@@ -6,6 +6,20 @@ import { CheckIcon, ChevronDownIcon, ChevronUpIcon } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 
+/**
+ * Select 下拉选择器，由触发器与内容组成，支持分组、分隔线与标签。
+ *
+ * 用法示例：
+ * ```tsx
+ * <Select>
+ *   <SelectTrigger className="w-48"><SelectValue placeholder="选择项" /></SelectTrigger>
+ *   <SelectContent>
+ *     <SelectItem value="a">A</SelectItem>
+ *     <SelectItem value="b">B</SelectItem>
+ *   </SelectContent>
+ * </Select>
+ * ```
+ */
 function Select({
   ...props
 }: React.ComponentProps<typeof SelectPrimitive.Root>) {
@@ -24,6 +38,7 @@ function SelectValue({
   return <SelectPrimitive.Value data-slot="select-value" {...props} />
 }
 
+/** SelectTrigger 选择器触发按钮，支持 size="sm" | "default"。 */
 function SelectTrigger({
   className,
   size = "default",

@@ -5,6 +5,21 @@ import * as TabsPrimitive from "@radix-ui/react-tabs"
 
 import { cn } from "@/lib/utils"
 
+/**
+ * Tabs 选项卡组件，用于在多个内容视图间切换。
+ *
+ * 用法示例：
+ * ```tsx
+ * <Tabs defaultValue="a">
+ *   <TabsList>
+ *     <TabsTrigger value="a">A</TabsTrigger>
+ *     <TabsTrigger value="b">B</TabsTrigger>
+ *   </TabsList>
+ *   <TabsContent value="a">A Content</TabsContent>
+ *   <TabsContent value="b">B Content</TabsContent>
+ * </Tabs>
+ * ```
+ */
 function Tabs({
   className,
   ...props

@@ -6,6 +6,17 @@ import { CheckIcon, ChevronRightIcon, CircleIcon } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 
+/**
+ * DropdownMenu 下拉菜单，承载一组动作，支持复选与单选。
+ *
+ * 用法示例：
+ * ```tsx
+ * <DropdownMenu>
+ *   <DropdownMenuTrigger asChild><Button>打开</Button></DropdownMenuTrigger>
+ *   <DropdownMenuContent><DropdownMenuItem>操作</DropdownMenuItem></DropdownMenuContent>
+ * </DropdownMenu>
+ * ```
+ */
 function DropdownMenu({
   ...props
 }: React.ComponentProps<typeof DropdownMenuPrimitive.Root>) {

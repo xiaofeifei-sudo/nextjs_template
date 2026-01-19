@@ -5,7 +5,13 @@ export default {
   component: Button,
   parameters: {
     nextjs: { appDirectory: true },
+    docs: {
+      description: {
+        component: '按钮组件用于触发操作，支持多种外观与尺寸。建议结合图标使用以增强语义。',
+      },
+    },
   },
+  tags: ['autodocs'],
 }
 
 export const Primary = {

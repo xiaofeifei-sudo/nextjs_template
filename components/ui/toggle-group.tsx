@@ -7,6 +7,17 @@ import { type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 import { toggleVariants } from "@/components/ui/toggle"
 
+/**
+ * ToggleGroup 切换组，组合多个 Toggle 形成互斥或多选的开关组。
+ *
+ * 用法示例：
+ * ```tsx
+ * <ToggleGroup type="single">
+ *   <ToggleGroupItem value="bold">Bold</ToggleGroupItem>
+ *   <ToggleGroupItem value="italic">Italic</ToggleGroupItem>
+ * </ToggleGroup>
+ * ```
+ */
 const ToggleGroupContext = React.createContext<
   VariantProps<typeof toggleVariants> & {
     spacing?: number

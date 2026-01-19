@@ -2,6 +2,27 @@ import * as React from "react"
 
 import { cn } from "@/lib/utils"
 
+/**
+ * Card 卡片组件，用于承载一块内容区域。
+ *
+ * 组成：
+ * - CardHeader：标题与描述
+ * - CardContent：主体内容
+ * - CardFooter：底部操作区
+ * - CardAction：右上角操作容器
+ *
+ * 用法示例：
+ * ```tsx
+ * <Card>
+ *   <CardHeader>
+ *     <CardTitle>标题</CardTitle>
+ *     <CardDescription>描述</CardDescription>
+ *   </CardHeader>
+ *   <CardContent>内容</CardContent>
+ *   <CardFooter><Button>确认</Button></CardFooter>
+ * </Card>
+ * ```
+ */
 function Card({ className, ...props }: React.ComponentProps<"div">) {
   return (
     <div

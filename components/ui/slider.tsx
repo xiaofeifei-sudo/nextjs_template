@@ -5,6 +5,15 @@ import * as SliderPrimitive from "@radix-ui/react-slider"
 
 import { cn } from "@/lib/utils"
 
+/**
+ * Slider 滑块组件，支持单值与范围、水平与垂直方向。
+ *
+ * 用法示例：
+ * ```tsx
+ * <Slider defaultValue={[40]} max={100} step={1} />
+ * <Slider orientation="vertical" defaultValue={[50]} />
+ * ```
+ */
 function Slider({
   className,
   defaultValue,

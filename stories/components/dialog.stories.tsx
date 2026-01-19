@@ -4,7 +4,11 @@ import { Dialog, DialogTrigger, DialogContent, DialogHeader, DialogTitle, Dialog
 export default {
   title: 'Components/Dialog',
   component: DialogContent,
-  parameters: { nextjs: { appDirectory: true } },
+  parameters: { 
+    nextjs: { appDirectory: true },
+    docs: { description: { component: '对话框用于承载临时内容或交互，支持标题、描述、关闭按钮等。' } },
+  },
+  tags: ['autodocs'],
 }
 
 export const Default = {
@@ -22,4 +26,3 @@ export const Default = {
     </Dialog>
   ),
 }
-

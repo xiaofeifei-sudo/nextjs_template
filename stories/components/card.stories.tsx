@@ -4,7 +4,11 @@ import { Button } from '../../components/ui/button'
 export default {
   title: 'Components/Card',
   component: Card,
-  parameters: { nextjs: { appDirectory: true } },
+  parameters: { 
+    nextjs: { appDirectory: true },
+    docs: { description: { component: '卡片用于承载一块内容区域，支持头部、内容与操作区。' } },
+  },
+  tags: ['autodocs'],
 }
 
 export const Default = {
@@ -26,4 +30,3 @@ export const Default = {
     </Card>
   ),
 }
-

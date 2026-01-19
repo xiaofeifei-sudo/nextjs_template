@@ -3,7 +3,11 @@ import { Skeleton } from '../../components/ui/skeleton'
 export default {
   title: 'Components/Skeleton',
   component: Skeleton,
-  parameters: { nextjs: { appDirectory: true } },
+  parameters: { 
+    nextjs: { appDirectory: true },
+    docs: { description: { component: 'Skeleton 骨架屏用于在数据加载时展示占位，提高感知性能。' } },
+  },
+  tags: ['autodocs'],
 }
 
 export const Lines = {
@@ -19,4 +23,3 @@ export const Lines = {
 export const Circle = {
   render: () => <Skeleton className="h-12 w-12 rounded-full" />,
 }
-

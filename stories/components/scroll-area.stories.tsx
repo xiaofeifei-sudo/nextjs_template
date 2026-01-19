@@ -3,7 +3,11 @@ import { ScrollArea } from '../../components/ui/scroll-area'
 export default {
   title: 'Components/ScrollArea',
   component: ScrollArea,
-  parameters: { nextjs: { appDirectory: true } },
+  parameters: { 
+    nextjs: { appDirectory: true },
+    docs: { description: { component: '滚动区域封装溢出内容滚动行为，适用于受限高度内容。' } },
+  },
+  tags: ['autodocs'],
 }
 
 export const Default = {
@@ -26,4 +30,3 @@ export const Default = {
     </ScrollArea>
   ),
 }
-

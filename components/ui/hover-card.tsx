@@ -5,6 +5,17 @@ import * as HoverCardPrimitive from "@radix-ui/react-hover-card"
 
 import { cn } from "@/lib/utils"
 
+/**
+ * HoverCard 悬浮卡片，悬停触发显示轻量说明或内容。
+ *
+ * 用法示例：
+ * ```tsx
+ * <HoverCard>
+ *   <HoverCardTrigger asChild><Button>Hover</Button></HoverCardTrigger>
+ *   <HoverCardContent>内容</HoverCardContent>
+ * </HoverCard>
+ * ```
+ */
 function HoverCard({
   ...props
 }: React.ComponentProps<typeof HoverCardPrimitive.Root>) {

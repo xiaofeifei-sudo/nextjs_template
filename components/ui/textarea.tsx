@@ -2,6 +2,14 @@ import * as React from "react"
 
 import { cn } from "@/lib/utils"
 
+/**
+ * Textarea 多行文本输入组件，适用于较长内容编辑。
+ *
+ * 用法示例：
+ * ```tsx
+ * <Textarea rows={4} placeholder="请输入内容" />
+ * ```
+ */
 function Textarea({ className, ...props }: React.ComponentProps<"textarea">) {
   return (
     <textarea

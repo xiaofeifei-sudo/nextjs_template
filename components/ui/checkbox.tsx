@@ -6,6 +6,15 @@ import { CheckIcon } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 
+/**
+ * Checkbox 复选框组件，用于布尔选择。
+ *
+ * 用法示例：
+ * ```tsx
+ * <Checkbox id="agree" />
+ * <label htmlFor="agree">我同意条款</label>
+ * ```
+ */
 function Checkbox({
   className,
   ...props

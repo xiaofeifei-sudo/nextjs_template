@@ -2,6 +2,15 @@ import * as React from "react"
 
 import { cn } from "@/lib/utils"
 
+/**
+ * Input 文本输入框组件，支持占位符、校验态、禁用等。
+ *
+ * 用法示例：
+ * ```tsx
+ * <Input placeholder="姓名" />
+ * <Input type="email" aria-invalid />
+ * ```
+ */
 function Input({ className, type, ...props }: React.ComponentProps<"input">) {
   return (
     <input

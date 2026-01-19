@@ -15,6 +15,15 @@ import {
 import { cn } from "@/lib/utils"
 import { Button, buttonVariants } from "@/components/ui/button"
 
+/**
+ * Calendar 日历组件，基于 react-day-picker 封装，支持范围选择等。
+ *
+ * 用法示例：
+ * ```tsx
+ * <Calendar mode="single" selected={date} onSelect={setDate} />
+ * <Calendar mode="range" selected={range} onSelect={setRange} />
+ * ```
+ */
 function Calendar({
   className,
   classNames,

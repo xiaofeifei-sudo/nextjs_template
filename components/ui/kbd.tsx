@@ -1,5 +1,13 @@
 import { cn } from "@/lib/utils"
 
+/**
+ * Kbd 键盘按键组件，用于展示快捷键提示。
+ *
+ * 用法示例：
+ * ```tsx
+ * <KbdGroup><Kbd>⌘</Kbd><Kbd>K</Kbd></KbdGroup>
+ * ```
+ */
 function Kbd({ className, ...props }: React.ComponentProps<"kbd">) {
   return (
     <kbd

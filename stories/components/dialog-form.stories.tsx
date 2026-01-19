@@ -18,6 +18,7 @@ const schema = z.object({
 export default {
   title: 'Components/DialogForm',
   parameters: { nextjs: { appDirectory: true } },
+  tags: ['autodocs'],
 }
 
 export const InDialog = {
@@ -97,4 +98,3 @@ export const InDialog = {
     )
   },
 }
-

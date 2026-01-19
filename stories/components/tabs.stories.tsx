@@ -3,7 +3,11 @@ import { Tabs, TabsList, TabsTrigger, TabsContent } from '../../components/ui/ta
 export default {
   title: 'Components/Tabs',
   component: Tabs,
-  parameters: { nextjs: { appDirectory: true } },
+  parameters: { 
+    nextjs: { appDirectory: true },
+    docs: { description: { component: '选项卡用于在多个内容视图之间切换，支持键盘可访问性。' } },
+  },
+  tags: ['autodocs'],
 }
 
 export const Default = {
@@ -18,4 +22,3 @@ export const Default = {
     </Tabs>
   ),
 }
-

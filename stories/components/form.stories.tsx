@@ -29,6 +29,7 @@ const schema = z.object({
 export default {
   title: 'Components/Form',
   parameters: { nextjs: { appDirectory: true } },
+  tags: ['autodocs'],
 }
 
 export const Validation = {

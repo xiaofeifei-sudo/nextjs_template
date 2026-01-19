@@ -19,6 +19,15 @@ const alertVariants = cva(
   }
 )
 
+/**
+ * Alert 警告提示组件，用于展示重要通知与状态。
+ *
+ * 用法示例：
+ * ```tsx
+ * <Alert><AlertTitle>成功</AlertTitle><AlertDescription>保存完成</AlertDescription></Alert>
+ * <Alert variant="destructive"><AlertTitle>错误</AlertTitle><AlertDescription>操作失败</AlertDescription></Alert>
+ * ```
+ */
 function Alert({
   className,
   variant,

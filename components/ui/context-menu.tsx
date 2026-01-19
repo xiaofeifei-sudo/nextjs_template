@@ -6,6 +6,17 @@ import { CheckIcon, ChevronRightIcon, CircleIcon } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 
+/**
+ * ContextMenu 右键菜单，承载上下文相关操作。
+ *
+ * 用法示例：
+ * ```tsx
+ * <ContextMenu>
+ *   <ContextMenuTrigger asChild><div>右键区域</div></ContextMenuTrigger>
+ *   <ContextMenuContent><ContextMenuItem>复制</ContextMenuItem></ContextMenuContent>
+ * </ContextMenu>
+ * ```
+ */
 function ContextMenu({
   ...props
 }: React.ComponentProps<typeof ContextMenuPrimitive.Root>) {

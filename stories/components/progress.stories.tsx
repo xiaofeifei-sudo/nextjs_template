@@ -4,7 +4,11 @@ import { Progress } from '../../components/ui/progress'
 export default {
   title: 'Components/Progress',
   component: Progress,
-  parameters: { nextjs: { appDirectory: true } },
+  parameters: { 
+    nextjs: { appDirectory: true },
+    docs: { description: { component: '进度条用于展示任务完成度，支持受控设置 value。' } },
+  },
+  tags: ['autodocs'],
 }
 
 export const Value30 = {

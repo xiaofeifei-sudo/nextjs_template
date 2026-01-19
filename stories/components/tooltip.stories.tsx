@@ -4,7 +4,11 @@ import { Tooltip, TooltipTrigger, TooltipContent } from '../../components/ui/too
 export default {
   title: 'Components/Tooltip',
   component: TooltipContent,
-  parameters: { nextjs: { appDirectory: true } },
+  parameters: { 
+    nextjs: { appDirectory: true },
+    docs: { description: { component: '工具提示用于轻量说明，触发方式通常为悬停或聚焦。' } },
+  },
+  tags: ['autodocs'],
 }
 
 export const Default = {
@@ -17,4 +21,3 @@ export const Default = {
     </Tooltip>
   ),
 }
-

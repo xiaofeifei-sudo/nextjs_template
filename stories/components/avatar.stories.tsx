@@ -3,7 +3,11 @@ import { Avatar, AvatarImage, AvatarFallback } from '../../components/ui/avatar'
 export default {
   title: 'Components/Avatar',
   component: Avatar,
-  parameters: { nextjs: { appDirectory: true } },
+  tags: ['autodocs'],
+  parameters: { 
+    nextjs: { appDirectory: true },
+    docs: { description: { component: '头像组件用于用户身份展示，支持图片与占位 Fallback。' } },
+  },
 }
 
 export const Image = {
@@ -25,4 +29,3 @@ export const Fallback = {
     </Avatar>
   ),
 }
-

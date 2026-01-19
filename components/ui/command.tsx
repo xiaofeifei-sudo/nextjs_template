@@ -13,6 +13,21 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog"
 
+/**
+ * Command 命令面板，提供搜索与快捷执行入口。
+ *
+ * 用法示例：
+ * ```tsx
+ * <CommandDialog>
+ *   <CommandInput placeholder="搜索命令..." />
+ *   <CommandList>
+ *     <CommandGroup heading="通用">
+ *       <CommandItem>新建</CommandItem>
+ *     </CommandGroup>
+ *   </CommandList>
+ * </CommandDialog>
+ * ```
+ */
 function Command({
   className,
   ...props

@@ -6,6 +6,26 @@ import * as AlertDialogPrimitive from "@radix-ui/react-alert-dialog"
 import { cn } from "@/lib/utils"
 import { buttonVariants } from "@/components/ui/button"
 
+/**
+ * AlertDialog 危险操作确认对话框，提供取消与确认动作。
+ *
+ * 用法示例：
+ * ```tsx
+ * <AlertDialog>
+ *   <AlertDialogTrigger asChild><Button>删除</Button></AlertDialogTrigger>
+ *   <AlertDialogContent>
+ *     <AlertDialogHeader>
+ *       <AlertDialogTitle>确认删除？</AlertDialogTitle>
+ *       <AlertDialogDescription>该操作不可撤销。</AlertDialogDescription>
+ *     </AlertDialogHeader>
+ *     <AlertDialogFooter>
+ *       <AlertDialogCancel>取消</AlertDialogCancel>
+ *       <AlertDialogAction>确认</AlertDialogAction>
+ *     </AlertDialogFooter>
+ *   </AlertDialogContent>
+ * </AlertDialog>
+ * ```
+ */
 function AlertDialog({
   ...props
 }: React.ComponentProps<typeof AlertDialogPrimitive.Root>) {

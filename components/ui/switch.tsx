@@ -5,6 +5,14 @@ import * as SwitchPrimitive from "@radix-ui/react-switch"
 
 import { cn } from "@/lib/utils"
 
+/**
+ * Switch 开关组件，用于二元状态切换。
+ *
+ * 用法示例：
+ * ```tsx
+ * <Switch aria-label="开启功能" />
+ * ```
+ */
 function Switch({
   className,
   ...props

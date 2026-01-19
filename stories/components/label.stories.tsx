@@ -5,7 +5,11 @@ import { Checkbox } from '../../components/ui/checkbox'
 export default {
   title: 'Components/Label',
   component: Label,
-  parameters: { nextjs: { appDirectory: true } },
+  parameters: { 
+    nextjs: { appDirectory: true },
+    docs: { description: { component: 'Label 标签用于为输入控件提供可点击的语义说明。' } },
+  },
+  tags: ['autodocs'],
 }
 
 export const ForInput = {
@@ -25,4 +29,3 @@ export const ForCheckbox = {
     </div>
   ),
 }
-

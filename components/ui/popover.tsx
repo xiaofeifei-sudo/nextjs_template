@@ -5,6 +5,17 @@ import * as PopoverPrimitive from "@radix-ui/react-popover"
 
 import { cn } from "@/lib/utils"
 
+/**
+ * Popover 气泡卡片，承载轻量内容或操作，与触发元素相对定位展示。
+ *
+ * 用法示例：
+ * ```tsx
+ * <Popover>
+ *   <PopoverTrigger asChild><Button>打开</Button></PopoverTrigger>
+ *   <PopoverContent>Popover 内容</PopoverContent>
+ * </Popover>
+ * ```
+ */
 function Popover({
   ...props
 }: React.ComponentProps<typeof PopoverPrimitive.Root>) {

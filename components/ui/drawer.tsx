@@ -5,6 +5,17 @@ import { Drawer as DrawerPrimitive } from "vaul"
 
 import { cn } from "@/lib/utils"
 
+/**
+ * Drawer 抽屉组件，支持顶部、底部、左右方向滑出。
+ *
+ * 用法示例：
+ * ```tsx
+ * <Drawer>
+ *   <DrawerTrigger asChild><Button>打开</Button></DrawerTrigger>
+ *   <DrawerContent><DrawerHeader>...</DrawerHeader></DrawerContent>
+ * </Drawer>
+ * ```
+ */
 function Drawer({
   ...props
 }: React.ComponentProps<typeof DrawerPrimitive.Root>) {

@@ -5,6 +5,15 @@ import * as LabelPrimitive from "@radix-ui/react-label"
 
 import { cn } from "@/lib/utils"
 
+/**
+ * Label 标签组件，为输入控件提供可点击的语义说明。
+ *
+ * 用法示例：
+ * ```tsx
+ * <Label htmlFor="name">姓名</Label>
+ * <Input id="name" />
+ * ```
+ */
 function Label({
   className,
   ...props

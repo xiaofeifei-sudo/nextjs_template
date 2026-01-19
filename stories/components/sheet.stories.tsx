@@ -4,7 +4,11 @@ import { Sheet, SheetTrigger, SheetContent, SheetHeader, SheetTitle, SheetDescri
 export default {
   title: 'Components/Sheet',
   component: SheetContent,
-  parameters: { nextjs: { appDirectory: true } },
+  parameters: { 
+    nextjs: { appDirectory: true },
+    docs: { description: { component: 'Sheet 与 Drawer 类似，承载临时内容，通常用于移动端或轻量编辑。' } },
+  },
+  tags: ['autodocs'],
 }
 
 export const Default = {
@@ -22,4 +26,3 @@ export const Default = {
     </Sheet>
   ),
 }
-

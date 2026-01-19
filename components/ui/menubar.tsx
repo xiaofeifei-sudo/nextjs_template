@@ -6,6 +6,19 @@ import { CheckIcon, ChevronRightIcon, CircleIcon } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 
+/**
+ * Menubar 菜单栏组件，用于顶层导航或操作集合。
+ *
+ * 用法示例：
+ * ```tsx
+ * <Menubar>
+ *   <MenubarMenu>
+ *     <MenubarTrigger>文件</MenubarTrigger>
+ *     <MenubarContent><MenubarItem>新建</MenubarItem></MenubarContent>
+ *   </MenubarMenu>
+ * </Menubar>
+ * ```
+ */
 function Menubar({
   className,
   ...props

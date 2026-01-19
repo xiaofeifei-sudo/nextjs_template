@@ -8,6 +8,21 @@ import {
 import { cn } from "@/lib/utils"
 import { buttonVariants, type Button } from "@/components/ui/button"
 
+/**
+ * Pagination 分页组件，提供页码导航与上一页/下一页。
+ *
+ * 用法示例：
+ * ```tsx
+ * <Pagination>
+ *   <PaginationContent>
+ *     <PaginationPrevious href="#" />
+ *     <PaginationItem><PaginationLink href="#">1</PaginationLink></PaginationItem>
+ *     <PaginationEllipsis />
+ *     <PaginationNext href="#" />
+ *   </PaginationContent>
+ * </Pagination>
+ * ```
+ */
 function Pagination({ className, ...props }: React.ComponentProps<"nav">) {
   return (
     <nav

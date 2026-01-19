@@ -4,7 +4,11 @@ import { Popover, PopoverTrigger, PopoverContent } from '../../components/ui/pop
 export default {
   title: 'Components/Popover',
   component: PopoverContent,
-  parameters: { nextjs: { appDirectory: true } },
+  parameters: { 
+    nextjs: { appDirectory: true },
+    docs: { description: { component: '气泡卡片承载轻量内容或操作，与触发元素相对定位展示。' } },
+  },
+  tags: ['autodocs'],
 }
 
 export const Default = {
@@ -17,4 +21,3 @@ export const Default = {
     </Popover>
   ),
 }
-

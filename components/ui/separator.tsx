@@ -5,6 +5,15 @@ import * as SeparatorPrimitive from "@radix-ui/react-separator"
 
 import { cn } from "@/lib/utils"
 
+/**
+ * Separator 分隔线组件，用于视觉分隔内容。
+ *
+ * 用法示例：
+ * ```tsx
+ * <Separator />
+ * <Separator orientation="vertical" />
+ * ```
+ */
 function Separator({
   className,
   orientation = "horizontal",

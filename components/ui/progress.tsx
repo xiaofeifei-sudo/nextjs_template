@@ -5,6 +5,14 @@ import * as ProgressPrimitive from "@radix-ui/react-progress"
 
 import { cn } from "@/lib/utils"
 
+/**
+ * Progress 进度条组件，用于展示任务完成度。
+ *
+ * 用法示例：
+ * ```tsx
+ * <Progress value={30} />
+ * ```
+ */
 function Progress({
   className,
   value,

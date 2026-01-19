@@ -6,6 +6,22 @@ import { XIcon } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 
+/**
+ * Dialog 对话框组件，承载临时内容或交互。
+ *
+ * 用法示例：
+ * ```tsx
+ * <Dialog>
+ *   <DialogTrigger asChild><Button>打开</Button></DialogTrigger>
+ *   <DialogContent>
+ *     <DialogHeader>
+ *       <DialogTitle>标题</DialogTitle>
+ *       <DialogDescription>说明文本</DialogDescription>
+ *     </DialogHeader>
+ *   </DialogContent>
+ * </Dialog>
+ * ```
+ */
 function Dialog({
   ...props
 }: React.ComponentProps<typeof DialogPrimitive.Root>) {
@@ -46,6 +62,9 @@ function DialogOverlay({
   )
 }
 
+/**
+ * DialogContent 对话框内容容器，支持 showCloseButton 控制关闭按钮展示。
+ */
 function DialogContent({
   className,
   children,

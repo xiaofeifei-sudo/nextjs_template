@@ -4,7 +4,11 @@ import { Label } from '../../components/ui/label'
 export default {
   title: 'Components/Switch',
   component: Switch,
-  parameters: { nextjs: { appDirectory: true } },
+  parameters: { 
+    nextjs: { appDirectory: true },
+    docs: { description: { component: '开关组件用于二元状态切换，可与标签组合使用。' } },
+  },
+  tags: ['autodocs'],
 }
 
 export const Default = {

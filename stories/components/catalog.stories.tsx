@@ -26,6 +26,7 @@ export default {
   parameters: {
     nextjs: { appDirectory: true },
   },
+  tags: ['autodocs'],
 }
 
 export const All = {

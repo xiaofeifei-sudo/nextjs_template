@@ -5,6 +5,14 @@ import * as ScrollAreaPrimitive from "@radix-ui/react-scroll-area"
 
 import { cn } from "@/lib/utils"
 
+/**
+ * ScrollArea 滚动区域组件，封装溢出内容滚动行为。
+ *
+ * 用法示例：
+ * ```tsx
+ * <ScrollArea className="h-32 w-80"><Content /></ScrollArea>
+ * ```
+ */
 function ScrollArea({
   className,
   children,

@@ -4,6 +4,7 @@ export default {
   title: 'Components/ContextMenu',
   component: ContextMenuContent,
   parameters: { nextjs: { appDirectory: true } },
+  tags: ['autodocs'],
 }
 
 export const Default = {
@@ -22,4 +23,3 @@ export const Default = {
     </ContextMenu>
   ),
 }
-

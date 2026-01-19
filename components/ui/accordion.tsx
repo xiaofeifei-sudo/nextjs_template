@@ -6,6 +6,19 @@ import { ChevronDownIcon } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 
+/**
+ * Accordion 手风琴组件，用于分组展示可展开/折叠的内容。
+ *
+ * 用法示例：
+ * ```tsx
+ * <Accordion type="single" collapsible>
+ *   <AccordionItem value="a">
+ *     <AccordionTrigger>标题</AccordionTrigger>
+ *     <AccordionContent>内容</AccordionContent>
+ *   </AccordionItem>
+ * </Accordion>
+ * ```
+ */
 function Accordion({
   ...props
 }: React.ComponentProps<typeof AccordionPrimitive.Root>) {

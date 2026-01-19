@@ -5,6 +5,21 @@ import { ChevronDownIcon } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 
+/**
+ * NavigationMenu 导航菜单，支持下拉内容与视口动画。
+ *
+ * 用法示例：
+ * ```tsx
+ * <NavigationMenu>
+ *   <NavigationMenuList>
+ *     <NavigationMenuItem>
+ *       <NavigationMenuTrigger>产品</NavigationMenuTrigger>
+ *       <NavigationMenuContent>...</NavigationMenuContent>
+ *     </NavigationMenuItem>
+ *   </NavigationMenuList>
+ * </NavigationMenu>
+ * ```
+ */
 function NavigationMenu({
   className,
   children,

@@ -3,7 +3,11 @@ import { Slider } from '../../components/ui/slider'
 export default {
   title: 'Components/Slider',
   component: Slider,
-  parameters: { nextjs: { appDirectory: true } },
+  parameters: { 
+    nextjs: { appDirectory: true },
+    docs: { description: { component: '滑块组件支持单值与范围选择，支持垂直方向。' } },
+  },
+  tags: ['autodocs'],
 }
 
 export const SingleValue = {
@@ -29,4 +33,3 @@ export const Vertical = {
     </div>
   ),
 }
-

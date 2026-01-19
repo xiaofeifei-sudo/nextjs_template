@@ -22,6 +22,8 @@ const data = [
 export default {
   title: 'Components/Command',
   parameters: { nextjs: { appDirectory: true } },
+  tags: ['autodocs'],
+  docs: { description: { component: '命令面板提供快速搜索与命令触发的统一入口。' } },
 }
 
 export const Palette = {
@@ -81,4 +83,3 @@ export const Palette = {
     )
   },
 }
-

@@ -4,7 +4,11 @@ import { Drawer, DrawerTrigger, DrawerContent, DrawerHeader, DrawerTitle, Drawer
 export default {
   title: 'Components/Drawer',
   component: DrawerContent,
-  parameters: { nextjs: { appDirectory: true } },
+  parameters: { 
+    nextjs: { appDirectory: true },
+    docs: { description: { component: '抽屉用于从屏幕边缘滑出的临时内容面板。' } },
+  },
+  tags: ['autodocs'],
 }
 
 export const Default = {
@@ -22,4 +26,3 @@ export const Default = {
     </Drawer>
   ),
 }
-

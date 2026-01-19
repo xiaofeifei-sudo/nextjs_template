@@ -3,7 +3,11 @@ import { Menubar, MenubarMenu, MenubarTrigger, MenubarContent, MenubarItem, Menu
 export default {
   title: 'Components/Menubar',
   component: Menubar,
-  parameters: { nextjs: { appDirectory: true } },
+  parameters: { 
+    nextjs: { appDirectory: true },
+    docs: { description: { component: '菜单栏用于顶层导航或操作集合，支持下拉内容。' } },
+  },
+  tags: ['autodocs'],
 }
 
 export const Default = {
@@ -21,4 +25,3 @@ export const Default = {
     </Menubar>
   ),
 }
-

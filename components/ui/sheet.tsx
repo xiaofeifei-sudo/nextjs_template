@@ -6,6 +6,17 @@ import { XIcon } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 
+/**
+ * Sheet 侧边抽屉组件，从屏幕边缘滑出承载临时内容。
+ *
+ * 用法示例：
+ * ```tsx
+ * <Sheet>
+ *   <SheetTrigger asChild><Button>打开</Button></SheetTrigger>
+ *   <SheetContent side="right"><SheetHeader>...</SheetHeader></SheetContent>
+ * </Sheet>
+ * ```
+ */
 function Sheet({ ...props }: React.ComponentProps<typeof SheetPrimitive.Root>) {
   return <SheetPrimitive.Root data-slot="sheet" {...props} />
 }
@@ -44,6 +55,7 @@ function SheetOverlay({
   )
 }
 
+/** SheetContent 内容容器，支持 side 指定方向。 */
 function SheetContent({
   className,
   children,

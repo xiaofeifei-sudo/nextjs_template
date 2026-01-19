@@ -6,6 +6,19 @@ import { CircleIcon } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 
+/**
+ * RadioGroup 单选组组件，配合 RadioGroupItem 进行单选。
+ *
+ * 用法示例：
+ * ```tsx
+ * <RadioGroup defaultValue="a">
+ *   <div className="flex items-center gap-2">
+ *     <RadioGroupItem value="a" id="a" /><label htmlFor="a">A</label>
+ *     <RadioGroupItem value="b" id="b" /><label htmlFor="b">B</label>
+ *   </div>
+ * </RadioGroup>
+ * ```
+ */
 function RadioGroup({
   className,
   ...props

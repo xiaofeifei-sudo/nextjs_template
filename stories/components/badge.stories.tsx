@@ -3,7 +3,11 @@ import { Badge } from '../../components/ui/badge'
 export default {
   title: 'Components/Badge',
   component: Badge,
-  parameters: { nextjs: { appDirectory: true } },
+  parameters: { 
+    nextjs: { appDirectory: true },
+    docs: { description: { component: '徽章用于轻量标记状态或属性，适合与按钮等组合使用。' } },
+  },
+  tags: ['autodocs'],
 }
 
 export const Variants = {
@@ -16,4 +20,3 @@ export const Variants = {
     </div>
   ),
 }
-

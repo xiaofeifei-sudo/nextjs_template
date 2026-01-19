@@ -25,6 +25,15 @@ const badgeVariants = cva(
   }
 )
 
+/**
+ * Badge 徽章组件，用于轻量标记状态或属性。
+ *
+ * 用法示例：
+ * ```tsx
+ * <Badge>默认</Badge>
+ * <Badge variant="secondary">次要</Badge>
+ * ```
+ */
 function Badge({
   className,
   variant,

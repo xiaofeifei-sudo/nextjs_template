@@ -4,7 +4,11 @@ import { Label } from '../../components/ui/label'
 export default {
   title: 'Components/Checkbox',
   component: Checkbox,
-  parameters: { nextjs: { appDirectory: true } },
+  parameters: { 
+    nextjs: { appDirectory: true },
+    docs: { description: { component: '复选框用于布尔选择，支持禁用与校验态展示。' } },
+  },
+  tags: ['autodocs'],
 }
 
 export const Default = {
@@ -15,4 +19,3 @@ export const Default = {
     </div>
   ),
 }
-

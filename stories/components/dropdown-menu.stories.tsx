@@ -4,7 +4,11 @@ import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuIte
 export default {
   title: 'Components/DropdownMenu',
   component: DropdownMenuContent,
-  parameters: { nextjs: { appDirectory: true } },
+  parameters: { 
+    nextjs: { appDirectory: true },
+    docs: { description: { component: '下拉菜单用于承载一组操作，支持分隔线与标签。' } },
+  },
+  tags: ['autodocs'],
 }
 
 export const Default = {
@@ -23,4 +27,3 @@ export const Default = {
     </DropdownMenu>
   ),
 }
-

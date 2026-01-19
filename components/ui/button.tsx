@@ -36,6 +36,16 @@ const buttonVariants = cva(
   }
 )
 
+/**
+ * Button 用于触发操作，支持 variant 与 size 两类样式配置。
+ *
+ * 用法示例：
+ * ```tsx
+ * <Button>提交</Button>
+ * <Button variant="outline">取消</Button>
+ * <Button size="icon" aria-label="Like"><ThumbsUp /></Button>
+ * ```
+ */
 function Button({
   className,
   variant = "default",

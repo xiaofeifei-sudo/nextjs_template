@@ -6,6 +6,18 @@ import { MinusIcon } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 
+/**
+ * InputOTP 一次性密码输入，支持多槽位与分隔符。
+ *
+ * 用法示例：
+ * ```tsx
+ * <InputOTP maxLength={6}>
+ *   <InputOTPGroup>
+ *     {[0,1,2,3,4,5].map(i => <InputOTPSlot key={i} index={i} />)}
+ *   </InputOTPGroup>
+ * </InputOTP>
+ * ```
+ */
 function InputOTP({
   className,
   containerClassName,

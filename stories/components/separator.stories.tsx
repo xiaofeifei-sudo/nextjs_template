@@ -4,6 +4,7 @@ export default {
   title: 'Components/Separator',
   component: Separator,
   parameters: { nextjs: { appDirectory: true } },
+  tags: ['autodocs'],
 }
 
 export const Horizontal = {
@@ -29,4 +30,3 @@ export const Vertical = {
     </div>
   ),
 }
-

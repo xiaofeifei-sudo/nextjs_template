@@ -5,6 +5,17 @@ import * as TooltipPrimitive from "@radix-ui/react-tooltip"
 
 import { cn } from "@/lib/utils"
 
+/**
+ * Tooltip 工具提示，用于轻量说明，常见触发为悬停或聚焦。
+ *
+ * 用法示例：
+ * ```tsx
+ * <Tooltip>
+ *   <TooltipTrigger asChild><Button>Hover</Button></TooltipTrigger>
+ *   <TooltipContent>提示内容</TooltipContent>
+ * </Tooltip>
+ * ```
+ */
 function TooltipProvider({
   delayDuration = 0,
   ...props

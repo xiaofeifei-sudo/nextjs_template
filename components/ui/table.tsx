@@ -4,6 +4,17 @@ import * as React from "react"
 
 import { cn } from "@/lib/utils"
 
+/**
+ * Table 表格组件，提供表头、行、单元格等基础结构。
+ *
+ * 用法示例：
+ * ```tsx
+ * <Table>
+ *   <TableHeader><TableRow><TableHead>标题</TableHead></TableRow></TableHeader>
+ *   <TableBody><TableRow><TableCell>内容</TableCell></TableRow></TableBody>
+ * </Table>
+ * ```
+ */
 function Table({ className, ...props }: React.ComponentProps<"table">) {
   return (
     <div

@@ -5,6 +5,17 @@ import * as AvatarPrimitive from "@radix-ui/react-avatar"
 
 import { cn } from "@/lib/utils"
 
+/**
+ * Avatar 头像组件，用于展示用户身份。
+ *
+ * 用法示例：
+ * ```tsx
+ * <Avatar>
+ *   <AvatarImage src="..." alt="头像" />
+ *   <AvatarFallback>NA</AvatarFallback>
+ * </Avatar>
+ * ```
+ */
 function Avatar({
   className,
   ...props
