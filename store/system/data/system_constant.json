@@ -1,0 +1,660 @@
+{
+    "listConstant": {
+      "CALLBACK_STATUS": [
+        {
+          "value": 1,
+          "text": "成功"
+        },
+        {
+          "value": 2,
+          "text": "失败"
+        }
+      ],
+      "RISK_LIMIT_STATUS": [
+        {
+          "value": 0,
+          "text": "失效"
+        },
+        {
+          "value": 1,
+          "text": "正常"
+        },
+        {
+          "value": -1,
+          "text": "删除"
+        }
+      ],
+      "TRANSACTION_STATUS_TRU": [
+        {
+          "value": 1,
+          "text": "待审批"
+        },
+        {
+          "value": 8,
+          "text": "已撤销"
+        },
+        {
+          "value": 3,
+          "text": "处理中"
+        },
+        {
+          "value": 5,
+          "text": "待确认"
+        },
+        {
+          "value": 6,
+          "text": "成功"
+        },
+        {
+          "value": 7,
+          "text": "失败"
+        },
+        {
+          "value": 2,
+          "text": "驳回"
+        }
+      ],
+      "RISK_LIMIT_TRANSACTION_TYPE": [
+        {
+          "value": 1,
+          "text": "发送"
+        },
+        {
+          "value": 2,
+          "text": "WaaS发送"
+        }
+      ],
+      "TRANSACTION_STATUS_WAAS": [
+        {
+          "value": 1,
+          "text": "待审批"
+        },
+        {
+          "value": 2,
+          "text": "驳回"
+        },
+        {
+          "value": 3,
+          "text": "处理中"
+        },
+        {
+          "value": 5,
+          "text": "待确认"
+        },
+        {
+          "value": 6,
+          "text": "成功"
+        },
+        {
+          "value": 7,
+          "text": "失败"
+        }
+      ],
+      "JOIN_RECORD_STATUS": [
+        {
+          "value": -1,
+          "text": "已过期"
+        },
+        {
+          "value": 0,
+          "text": "待加入"
+        },
+        {
+          "value": 1,
+          "text": "拒绝加入"
+        },
+        {
+          "value": 2,
+          "text": "已加入"
+        },
+        {
+          "value": 3,
+          "text": "已退出"
+        },
+        {
+          "value": 4,
+          "text": "已撤销"
+        },
+        {
+          "value": 5,
+          "text": "待审批"
+        },
+        {
+          "value": 6,
+          "text": "驳回"
+        }
+      ],
+      "STRATEGY_RECIPIENT_TYPE": [
+        {
+          "value": 0,
+          "text": "全部"
+        },
+        {
+          "value": 1,
+          "text": "白名单地址"
+        },
+        {
+          "value": 2,
+          "text": "团队Web3钱包"
+        },
+        {
+          "value": 4,
+          "text": "外部地址"
+        }
+      ],
+      "STRATEGY_LIMIT_TYPE": [
+        {
+          "value": 1,
+          "text": "每笔交易"
+        },
+        {
+          "value": 2,
+          "text": "小时交易"
+        }
+      ],
+      "LOG_CALLBACK_STATUS": [
+        {
+          "value": 0,
+          "text": "失败"
+        },
+        {
+          "value": 1,
+          "text": "成功"
+        },
+        {
+          "value": 2,
+          "text": "重试中"
+        },
+        {
+          "value": 3,
+          "text": "手动成功"
+        },
+        {
+          "value": 4,
+          "text": "手动失败"
+        },
+        {
+          "value": 5,
+          "text": "手动忽略"
+        }
+      ],
+      "STRATEGY_STATUS": [
+        {
+          "value": 1,
+          "text": "正常"
+        },
+        {
+          "value": 2,
+          "text": "异常"
+        },
+        {
+          "value": 0,
+          "text": "失效"
+        }
+      ],
+      "RISK_LIMIT_TYPE": [
+        {
+          "value": 1,
+          "text": "每笔交易"
+        },
+        {
+          "value": 2,
+          "text": "小时交易"
+        }
+      ],
+      "TRANSACTION_TYPE_TRU": [
+        {
+          "value": 1,
+          "text": "发送"
+        },
+        {
+          "value": 2,
+          "text": "接收"
+        },
+        {
+          "value": 3,
+          "text": "划转"
+        }
+      ],
+      "REQUEST_LOG_RESPONSE_STATUS": [
+        {
+          "value": 1,
+          "text": "正常"
+        },
+        {
+          "value": 0,
+          "text": "异常"
+        }
+      ],
+      "BUSINESS_TYPE_TRU": [
+        {
+          "value": 1,
+          "text": "站内"
+        },
+        {
+          "value": 2,
+          "text": "站外"
+        }
+      ],
+      "STRATEGY_LOG_ACTION": [
+        {
+          "value": 0,
+          "text": "创建"
+        },
+        {
+          "value": 1,
+          "text": "编辑"
+        },
+        {
+          "value": 2,
+          "text": "删除"
+        }
+      ],
+      "SEND_STATUS": [
+        {
+          "value": 0,
+          "text": "待发送"
+        },
+        {
+          "value": 1,
+          "text": "成功"
+        },
+        {
+          "value": 2,
+          "text": "失败"
+        }
+      ],
+      "WHITE_LIST_TYPE": [
+        {
+          "value": 1,
+          "text": "团队ID"
+        },
+        {
+          "value": 0,
+          "text": "区块链地址"
+        }
+      ],
+      "MESSAGE_TYPE": [
+        {
+          "value": "transaction",
+          "text": "交易"
+        },
+        {
+          "value": "collaborate",
+          "text": "协作"
+        },
+        {
+          "value": "platform",
+          "text": "平台"
+        },
+        {
+          "value": "team",
+          "text": "团队"
+        },
+        {
+          "value": "risk",
+          "text": "风控"
+        }
+      ],
+      "STRATEGY_TRANSACTION_TYPE": [
+        {
+          "value": 1,
+          "text": "发送"
+        },
+        {
+          "value": 2,
+          "text": "WaaS发送"
+        }
+      ],
+      "MESSAGE_STATUS": [
+        {
+          "value": 0,
+          "text": "待处理"
+        },
+        {
+          "value": 1,
+          "text": "处理中"
+        },
+        {
+          "value": 2,
+          "text": "成功"
+        },
+        {
+          "value": 3,
+          "text": "失败"
+        },
+        {
+          "value": 4,
+          "text": "重试"
+        }
+      ],
+      "AUDIT_TYPE": [
+        {
+          "value": "SEND",
+          "text": "发送"
+        },
+        {
+          "value": "API",
+          "text": "WaaS发送"
+        },
+        {
+          "value": "WHITE_LIST_ADD",
+          "text": "添加白名单"
+        },
+        {
+          "value": "WHITE_LIST_DEL",
+          "text": "删除白名单"
+        },
+        {
+          "value": "MEMBER_ADD",
+          "text": "邀请成员"
+        },
+        {
+          "value": "MEMBER_DEL",
+          "text": "删除成员"
+        },
+        {
+          "value": "TRANSACTION_STRATEGY_ADD",
+          "text": "创建交易策略"
+        },
+        {
+          "value": "TRANSACTION_STRATEGY_UPD",
+          "text": "编辑交易策略"
+        },
+        {
+          "value": "TRANSACTION_STRATEGY_DEL",
+          "text": "删除交易策略"
+        },
+        {
+          "value": "RISK_LIMIT_ADD",
+          "text": "创建风险限额"
+        },
+        {
+          "value": "RISK_LIMIT_UPD",
+          "text": "编辑风险限额"
+        },
+        {
+          "value": "RISK_LIMIT_DEL",
+          "text": "删除风险限额"
+        }
+      ],
+      "TEAM_RISK_STRATEGY_TYPE": [
+        {
+          "value": 1,
+          "text": "添加白名单"
+        },
+        {
+          "value": 2,
+          "text": "删除白名单"
+        },
+        {
+          "value": 3,
+          "text": "邀请成员"
+        },
+        {
+          "value": 4,
+          "text": "删除成员"
+        },
+        {
+          "value": 5,
+          "text": "创建交易策略"
+        },
+        {
+          "value": 6,
+          "text": "编辑交易策略"
+        },
+        {
+          "value": 7,
+          "text": "删除交易策略"
+        },
+        {
+          "value": 8,
+          "text": "创建风险限额"
+        },
+        {
+          "value": 9,
+          "text": "编辑风险限额"
+        },
+        {
+          "value": 10,
+          "text": "删除风险限额"
+        }
+      ],
+      "TRANSACTION_RISK_STRATEGY_TYPE": [
+        {
+          "value": 1,
+          "text": "发送"
+        },
+        {
+          "value": 2,
+          "text": "WaaS发送"
+        }
+      ],
+      "STRATEGY_LOG_TYPE": [
+        {
+          "value": 0,
+          "text": "团队风控"
+        },
+        {
+          "value": 1,
+          "text": "交易策略"
+        },
+        {
+          "value": 2,
+          "text": "风险限额"
+        },
+        {
+          "value": 3,
+          "text": "白名单"
+        }
+      ],
+      "AUDIT_STATUS": [
+        {
+          "value": 0,
+          "text": "待审批"
+        },
+        {
+          "value": 1,
+          "text": "已通过"
+        },
+        {
+          "value": 2,
+          "text": "驳回"
+        },
+        {
+          "value": 3,
+          "text": "已撤销"
+        }
+      ],
+      "READ_STATUS": [
+        {
+          "value": 0,
+          "text": "未读"
+        },
+        {
+          "value": 1,
+          "text": "已读"
+        },
+        {
+          "value": 2,
+          "text": "删除"
+        }
+      ],
+      "WEBHOOK_STATUS": [
+        {
+          "value": 0,
+          "text": "停用"
+        },
+        {
+          "value": 1,
+          "text": "正常"
+        }
+      ]
+    },
+    "mapConstant": {
+      "CALLBACK_STATUS": {
+        "1": "成功",
+        "2": "失败"
+      },
+      "RISK_LIMIT_STATUS": {
+        "0": "失效",
+        "-1": "删除",
+        "1": "正常"
+      },
+      "TRANSACTION_STATUS_TRU": {
+        "1": "待审批",
+        "2": "驳回",
+        "3": "处理中",
+        "5": "待确认",
+        "6": "成功",
+        "7": "失败",
+        "8": "已撤销"
+      },
+      "RISK_LIMIT_TRANSACTION_TYPE": {
+        "1": "发送",
+        "2": "WaaS发送"
+      },
+      "TRANSACTION_STATUS_WAAS": {
+        "1": "待审批",
+        "2": "驳回",
+        "3": "处理中",
+        "5": "待确认",
+        "6": "成功",
+        "7": "失败"
+      },
+      "JOIN_RECORD_STATUS": {
+        "0": "待加入",
+        "1": "拒绝加入",
+        "2": "已加入",
+        "3": "已退出",
+        "-1": "已过期",
+        "4": "已撤销",
+        "5": "待审批",
+        "6": "驳回"
+      },
+      "STRATEGY_RECIPIENT_TYPE": {
+        "0": "全部",
+        "1": "白名单地址",
+        "2": "团队Web3钱包",
+        "4": "外部地址"
+      },
+      "STRATEGY_LIMIT_TYPE": {
+        "1": "每笔交易",
+        "2": "小时交易"
+      },
+      "LOG_CALLBACK_STATUS": {
+        "0": "失败",
+        "1": "成功",
+        "2": "重试中",
+        "3": "手动成功",
+        "4": "手动失败",
+        "5": "手动忽略"
+      },
+      "STRATEGY_STATUS": {
+        "0": "失效",
+        "1": "正常",
+        "2": "异常"
+      },
+      "RISK_LIMIT_TYPE": {
+        "1": "每笔交易",
+        "2": "小时交易"
+      },
+      "TRANSACTION_TYPE_TRU": {
+        "1": "发送",
+        "2": "接收",
+        "3": "划转"
+      },
+      "REQUEST_LOG_RESPONSE_STATUS": {
+        "0": "异常",
+        "1": "正常"
+      },
+      "BUSINESS_TYPE_TRU": {
+        "1": "站内",
+        "2": "站外"
+      },
+      "STRATEGY_LOG_ACTION": {
+        "0": "创建",
+        "1": "编辑",
+        "2": "删除"
+      },
+      "SEND_STATUS": {
+        "0": "待发送",
+        "1": "成功",
+        "2": "失败"
+      },
+      "WHITE_LIST_TYPE": {
+        "0": "区块链地址",
+        "1": "团队ID"
+      },
+      "MESSAGE_TYPE": {
+        "risk": "风控",
+        "team": "团队",
+        "collaborate": "协作",
+        "transaction": "交易",
+        "platform": "平台"
+      },
+      "STRATEGY_TRANSACTION_TYPE": {
+        "1": "发送",
+        "2": "WaaS发送"
+      },
+      "MESSAGE_STATUS": {
+        "0": "待处理",
+        "1": "处理中",
+        "2": "成功",
+        "3": "失败",
+        "4": "重试"
+      },
+      "AUDIT_TYPE": {
+        "MEMBER_ADD": "邀请成员",
+        "RISK_LIMIT_UPD": "编辑风险限额",
+        "TRANSACTION_STRATEGY_DEL": "删除交易策略",
+        "RISK_LIMIT_DEL": "删除风险限额",
+        "TRANSACTION_STRATEGY_ADD": "创建交易策略",
+        "RISK_LIMIT_ADD": "创建风险限额",
+        "API": "WaaS发送",
+        "MEMBER_DEL": "删除成员",
+        "WHITE_LIST_DEL": "删除白名单",
+        "WHITE_LIST_ADD": "添加白名单",
+        "SEND": "发送",
+        "TRANSACTION_STRATEGY_UPD": "编辑交易策略"
+      },
+      "TEAM_RISK_STRATEGY_TYPE": {
+        "1": "添加白名单",
+        "2": "删除白名单",
+        "3": "邀请成员",
+        "4": "删除成员",
+        "5": "创建交易策略",
+        "6": "编辑交易策略",
+        "7": "删除交易策略",
+        "8": "创建风险限额",
+        "9": "编辑风险限额",
+        "10": "删除风险限额"
+      },
+      "TRANSACTION_RISK_STRATEGY_TYPE": {
+        "1": "发送",
+        "2": "WaaS发送"
+      },
+      "STRATEGY_LOG_TYPE": {
+        "0": "团队风控",
+        "1": "交易策略",
+        "2": "风险限额",
+        "3": "白名单"
+      },
+      "AUDIT_STATUS": {
+        "0": "待审批",
+        "1": "已通过",
+        "2": "驳回",
+        "3": "已撤销"
+      },
+      "READ_STATUS": {
+        "0": "未读",
+        "1": "已读",
+        "2": "删除"
+      },
+      "WEBHOOK_STATUS": {
+        "0": "停用",
+        "1": "正常"
+      }
+    },
+    "empty": false
+  }
