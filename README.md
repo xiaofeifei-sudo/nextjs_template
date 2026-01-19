@@ -1,4 +1,4 @@
-# ourin-nextjs-starter
+# nextjs-template-starter
 
 一个基于 Next.js 16 的现代 Web 应用程序启动模板，包含多字体排版系统、实用工具、自定义钩子和暗色模式 UI。
 
@@ -31,7 +31,7 @@
 ## 目录结构
 
 ```
-ourin-nextjs-starter/
+nextjs-template-starter/
 ├── app/                          # Next.js App Router 目录
 │   ├── [locale]/                  # 国际化路由
 │   │   ├── privacy/              # 隐私政策页面
