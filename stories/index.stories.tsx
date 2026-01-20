@@ -25,6 +25,7 @@ export const Catalog = {
     const items = useMemo(
       () => [
         { label: '组件总览', href: '?path=/story/components-catalog--all', group: 'Components' },
+        { label: 'Lucide 图标总览', href: '?path=/story/components-lucide-icons--all-icons', group: 'Components' },
         { label: '按钮 Button', href: '?path=/story/components-button--primary', group: 'Components' },
         { label: '工具提示 Tooltip', href: '?path=/story/components-tooltip--default', group: 'Components' },
         { label: '对话框 Dialog', href: '?path=/story/components-dialog--default', group: 'Components' },
