@@ -19,6 +19,9 @@ import type {
 } from '@/lib/services/request-client/types';
 import { ContentTypeEnum } from '@/lib/services/request-client/enum';
 import { checkStatus } from '@/lib/services/request-client/checkStatus';
+import { Env } from '@/lib/utils/env';
+import { isBrowser } from '@/lib/utils/browser';
+import { getCurrentLocale } from '@/lib/utils/i18n';
 
 /**
  * 核心请求类：对 axios 进行统一封装
@@ -308,7 +311,7 @@ export function createDefaultOptions(
   const tokenProvider =
     opt?.tokenProvider ||
     (() => {
-      if (typeof window !== 'undefined') {
+      if (isBrowser) {
         return localStorage.getItem('auth_token') || localStorage.getItem('token');
       }
       return undefined;
@@ -388,9 +391,11 @@ export function createDefaultOptions(
     },
     /** 请求拦截：注入 Token 等通用 Header */
     requestInterceptors: (config, options) => {
+      const ak = Env.ak();
+      const sk = Env.sk();
       const token =
         options.tokenProvider?.() ??
-        (typeof window !== 'undefined'
+        (isBrowser
           ? localStorage.getItem('auth_token') || localStorage.getItem('token')
           : undefined);
       if (
@@ -402,11 +407,21 @@ export function createDefaultOptions(
           Authorization: options.authenticationScheme
             ? `${options.authenticationScheme} ${token}`
             : `Bearer ${token}`,
+          ...(ak ? { 'Access-Key': ak } : {}),
+          ...(sk ? { 'App-End-Key': sk } : {}),
           'Time-Zone':
             Intl.DateTimeFormat().resolvedOptions().timeZone,
-          ...(typeof navigator !== 'undefined' && navigator.language
-            ? { 'Accept-Language': navigator.language }
-            : {}),
+          'Accept-Language': getCurrentLocale(),
+        };
+      }
+      if (!token) {
+        (config as any).headers = {
+          ...(config.headers || {}),
+          ...(ak ? { 'Access-Key': ak } : {}),
+          ...(sk ? { 'App-End-Key': sk } : {}),
+          'Time-Zone':
+            Intl.DateTimeFormat().resolvedOptions().timeZone,
+          'Accept-Language': getCurrentLocale(),
         };
       }
       return config;

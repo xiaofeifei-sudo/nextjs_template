@@ -1,14 +1,17 @@
 import type { Preview } from '@storybook/nextjs-vite'
 import '../app/globals.css'
 import { ThemeProvider } from '../components/theme-provider'
+import { ReactQueryProvider } from '../components/react-query-provider'
 
 const withTheme = (Story: any, context: any) => {
   const selected = context.globals?.theme as 'light' | 'dark' | 'system'
   return (
     <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-      <div className={selected === 'dark' ? 'dark' : ''}>
-        <Story />
-      </div>
+      <ReactQueryProvider>
+        <div className={selected === 'dark' ? 'dark' : ''}>
+          <Story />
+        </div>
+      </ReactQueryProvider>
     </ThemeProvider>
   )
 }

@@ -1,11 +1,20 @@
 import { routing } from './i18n/routing';
 import type { NextConfig } from 'next';
 import createNextIntlPlugin from 'next-intl/plugin';
+import bundleAnalyzer from '@next/bundle-analyzer';
+
+const isAnalyze = process.env.ANALYZE === 'true';
 
 const withNextIntl = createNextIntlPlugin({
   experimental: {
     createMessagesDeclaration: './messages/en.json',
   },
+});
+
+const withBundleAnalyzer = bundleAnalyzer({
+  enabled: process.env.ANALYZE === 'true',
+  openAnalyzer: false,
+  analyzerMode: 'static',
 });
 
 const nextConfig: NextConfig = {
@@ -17,7 +26,7 @@ const nextConfig: NextConfig = {
   // undefined: 默认构建输出，.next 目录，适用于生产模式 `next start` 或 Vercel 等托管提供商
   // 'standalone': 独立构建输出，.next/standalone 目录，仅包含必要的文件/依赖。适用于 Docker 容器自托管
   // 'export': 导出构建输出，out 目录，仅包含静态 HTML/CSS/JS。适用于无 Node.js 服务器的自托管
-  output: 'export',
+  output: isAnalyze ? undefined : 'export',
   
   // URL 尾部斜杠配置
   // true: 所有 URL 都以 / 结尾 (如 /about/)
@@ -789,4 +798,4 @@ const nextConfig: NextConfig = {
   // typedRoutes: true,
 };
 
-export default withNextIntl(nextConfig);
+export default withBundleAnalyzer(withNextIntl(nextConfig));

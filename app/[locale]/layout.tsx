@@ -33,6 +33,7 @@ import { getMessages, setRequestLocale } from 'next-intl/server';
 import { routing } from '@/i18n/routing';
 import { notFound } from 'next/navigation';
 import type { Locale } from '@/i18n/routing';
+import { ReactQueryProvider } from '@/components/react-query-provider';
 
 // === Font Configurations ===
 const outfit = Outfit({ variable: "--font-outfit", subsets: ["latin"] });
@@ -83,7 +84,7 @@ export default async function LocaleLayout({ children, params }: Props) {
   }
 
   // Enable static rendering
-  setRequestLocale(locale);
+  setRequestLocale(locale as Locale);
 
   // Fetch messages for the current locale
   const messages = await getMessages();
@@ -98,7 +99,7 @@ export default async function LocaleLayout({ children, params }: Props) {
             enableSystem
             disableTransitionOnChange
           >
-            {children}
+            <ReactQueryProvider>{children}</ReactQueryProvider>
           </ThemeProvider>
         </NextIntlClientProvider>
       </body>

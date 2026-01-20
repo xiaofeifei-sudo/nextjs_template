@@ -37,6 +37,7 @@ import {
 } from 'lucide-react';
 import { useRouter, usePathname } from '@/i18n/navigation';
 import { routing } from '@/i18n/routing';
+import type { Locale } from '@/i18n/routing';
 import { useSoundEffects } from '@/hooks/use-sound';
 
 // Dynamic imports for heavy components (code-split)
@@ -105,7 +106,7 @@ function LanguageSwitcher() {
   const pathname = usePathname();
   const { playHover, playClick } = useSoundEffects(0.15);
 
-  const handleLocaleChange = (locale: string) => {
+  const handleLocaleChange = (locale: Locale) => {
     playClick();
     router.replace(pathname, { locale });
     setIsOpen(false);
