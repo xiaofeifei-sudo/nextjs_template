@@ -1,0 +1,11 @@
+{
+  "url": "http://localhost:6006",
+  "name": "Storybook TON Demo",
+  "icons": [
+    {
+      "src": "/logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
