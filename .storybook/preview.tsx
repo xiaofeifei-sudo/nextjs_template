@@ -2,6 +2,11 @@ import type { Preview } from '@storybook/nextjs-vite'
 import '../app/globals.css'
 import { ThemeProvider } from '../components/theme-provider'
 import { ReactQueryProvider } from '../components/react-query-provider'
+import { Buffer } from 'buffer'
+
+if (typeof globalThis !== 'undefined' && !(globalThis as any).Buffer) {
+  ;(globalThis as any).Buffer = Buffer
+}
 
 const withTheme = (Story: any, context: any) => {
   const selected = context.globals?.theme as 'light' | 'dark' | 'system'
